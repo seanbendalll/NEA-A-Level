@@ -1,0 +1,325 @@
+{
+  "object": "list",
+  "results": [
+    {
+      "object": "block",
+      "id": "a7cfd18d-7d1a-4af8-80c5-2a7673cb8f13",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "heading_2",
+      "heading_2": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Files and Exception Handling",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Files and Exception Handling",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "e01f4a82-9e7e-40aa-8e4e-9fc567206e66",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a file",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a file",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "9cd23531-f068-4ed8-ba5a-c635982d6ecc",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a record",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a record",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "2c8713e2-84c4-42e2-be1a-548f10332dbf",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "How open a file in pseudo?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "How open a file in pseudo?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "3cebe42d-e8bb-4188-a5ec-7fad7078622a",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "How write line in pseudo",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "How write line in pseudo",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "83a5ed2d-1bb6-427e-b1a6-bd86039348dc",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a text file ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a text file ",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "7df51bb0-0e41-48da-a80b-60c2cf637132",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a binary file",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a binary file",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "4c69dd48-734a-4a56-9be0-61616ed5a5ab",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a subroutine interface?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a subroutine interface?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "755f326b-a405-4aa9-a334-ae92db5cef34",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "text": []
+      }
+    },
+    {
+      "object": "block",
+      "id": "2c7f3726-8fb7-4c13-b6b5-55bb7022f5f5",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "heading_2",
+      "heading_2": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Stack Frames + Recursion (Slides on GC)",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Stack Frames + Recursion (Slides on GC)",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "ca6e4852-6f4b-4bdd-80d7-def8a3e35534",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "text": []
+      }
+    },
+    {
+      "object": "block",
+      "id": "ee730a9d-f4ac-4da8-b24e-abfcf1ada826",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "text": []
+      }
+    },
+    {
+      "object": "block",
+      "id": "4efc981c-d930-4c3f-a294-910c26b3d371",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "text": []
+      }
+    }
+  ],
+  "next_cursor": null,
+  "has_more": false
+}

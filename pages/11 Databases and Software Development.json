@@ -1,0 +1,727 @@
+{
+  "object": "list",
+  "results": [
+    {
+      "object": "block",
+      "id": "4980f648-cb38-4127-8720-adb815bfa767",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is an entity",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is an entity",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "3127618e-fe98-493e-a286-2f36eaa7821f",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is an attribute?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is an attribute?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "4b34d203-85ab-495e-8298-5a8e7c79817c",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a primary key and entity identifier",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a primary key and entity identifier",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "0628f3f7-1943-4b01-ba1d-ff405746354e",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a composite primary key and give an example",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a composite primary key and give an example",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "b21601e6-5da6-4148-b235-d2df2469b799",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "48695a67-f406-40e2-bb72-444feef9d16d",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What are the three ways in which entities can be linked.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What are the three ways in which entities can be linked.",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "ce778605-b9f5-45c6-a832-b0353e1f48e1",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What are entity relationship diagrams",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What are entity relationship diagrams",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "e2fc6449-7d87-4642-a338-6f2bfcb88fe8",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is the a typical database structure",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is the a typical database structure",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "6da57b1a-70de-4470-8c30-fa69ed944cd6",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What are foreign keys and how are they used to create relationships.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What are foreign keys and how are they used to create relationships.",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "01d52eb5-0022-49ea-8496-8b908ccbc32b",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "How do you resolve the issue when creating links between a many to many database.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "How do you resolve the issue when creating links between a many to many database.",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "0458889d-ba65-4329-9dbc-bbc673e4d4eb",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "39874365-2aab-4972-b7b7-b6cdaad03f3e",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a relational database?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a relational database?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "95886806-35cb-423f-9026-47ac48a1fad1",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is normalisation and what issue does it resolve?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is normalisation and what issue does it resolve?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "eb325754-7cca-49c8-9c59-2b12434b541a",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "c911bb8c-0865-40c7-9b80-d6fd06b4d317",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is SQL?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is SQL?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "0da703e8-ff95-4f7f-b71c-a6037c1624cd",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What are the following statements in SQL",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What are the following statements in SQL",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "74809838-0f82-4eb3-9817-6e44ced442ba",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "How do you create a table in SQL",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "How do you create a table in SQL",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "7ec7830f-436b-4ca4-aeb3-4f8a27789d30",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "How do you define keys, datatypes and attributes a table should have",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "How do you define keys, datatypes and attributes a table should have",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "529d2978-df7a-41d0-b445-4cea91b74bb2",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is the alter keyword and how is it used.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is the alter keyword and how is it used.",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "8026eb6e-46f2-4154-b942-45563b16bd3f",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What are the following keywords",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What are the following keywords",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "c67f384d-0bb2-4d86-b35e-d094a5448dcc",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "How would you define a linked table with keys and references",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "How would you define a linked table with keys and references",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "f972821e-0b6a-42f8-88ed-bab15ed2de0b",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What are the following keywords",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What are the following keywords",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "0425218d-a334-4d74-b543-ba390654d05f",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a client server database?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a client server database?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "58830dfe-9593-4682-898a-e12c5278d66d",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is DBMS",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is DBMS",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "551619ae-1b8c-4716-9693-59cfe169752c",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Give 3 advantages of a client server system",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Give 3 advantages of a client server system",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "f21d2e71-8911-4b53-a80f-3e841e6843ab",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is the disadvantage to a client server database?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is the disadvantage to a client server database?",
+            "href": null
+          }
+        ]
+      }
+    }
+  ],
+  "next_cursor": null,
+  "has_more": false
+}

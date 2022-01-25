@@ -1,0 +1,485 @@
+{
+  "object": "list",
+  "results": [
+    {
+      "object": "block",
+      "id": "f1c58b7b-d864-408a-b91e-6cf4388f30b5",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "heading_2",
+      "heading_2": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "L2 - Big-O Notation",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "L2 - Big-O Notation",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "e8cc3aa5-5e7c-4552-9408-bbdbfaf1aca8",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "fa8c4430-634e-437e-a382-99ab39428364",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What are the two ways in which efficiency is measured in computing?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What are the two ways in which efficiency is measured in computing?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "ba461b7e-6518-447f-8c45-9263d490a5e5",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is big o notation?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is big o notation?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "778fa7a5-fbab-4c72-a2f2-76583be8dc50",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What are permutations?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What are permutations?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "f703efc8-5aca-449e-8b57-1857db64f73b",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "text": []
+      }
+    },
+    {
+      "object": "block",
+      "id": "9eb0708f-333e-4c0f-98ec-cf945f44d4af",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "heading_2",
+      "heading_2": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "L3 - Sorting and Searching",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "L3 - Sorting and Searching",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "f2db965f-4262-4fab-accf-fa9b1a21886d",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "5467032c-9fed-4082-98d2-6ddb3a747e09",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a linear search?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a linear search?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "ae867afa-9b0b-4dc3-af23-d6ab111e477a",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a binary search?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a binary search?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "54060bc6-09c4-401c-927e-11df2799bca6",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a binary tree search?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a binary tree search?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "371fd2aa-84e0-4497-8c79-031155dbf6cd",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a bubble sort?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a bubble sort?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "834b6c6f-f627-419f-8339-bba950382d9f",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a merge sort?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a merge sort?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "cbad25f0-5679-4607-bcbb-6fcfd84ee645",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "text": []
+      }
+    },
+    {
+      "object": "block",
+      "id": "4becb599-369f-4ac8-848a-db7d789d220c",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "heading_2",
+      "heading_2": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "L4 - Graph Traversal Algorithms",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "L4 - Graph Traversal Algorithms",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "5ea362b1-a356-4a56-bd90-5e20f6ebd976",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "b5bf7bc0-bfab-4a12-b094-1a1d83afca02",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What are the two ways of traversing a graph?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What are the two ways of traversing a graph?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "d5d64330-631b-46a1-963f-3ed016130ec7",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "text": []
+      }
+    },
+    {
+      "object": "block",
+      "id": "e5d4dc56-5973-4874-9a62-a87184a82233",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "heading_2",
+      "heading_2": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "L5 - Optimisation of Algorithms",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "L5 - Optimisation of Algorithms",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "b8af47c0-6815-4b6f-8e3f-c1a75ff1f977",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "29535492-fa8b-4127-8552-0161262e7f19",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": []
+      }
+    }
+  ],
+  "next_cursor": null,
+  "has_more": false
+}

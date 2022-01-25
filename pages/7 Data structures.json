@@ -1,0 +1,633 @@
+{
+  "object": "list",
+  "results": [
+    {
+      "object": "block",
+      "id": "541f9f4b-02da-4d31-8703-6c2e4e3d7acc",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "breadcrumb",
+      "breadcrumb": {}
+    },
+    {
+      "object": "block",
+      "id": "5dd6646a-b789-44cb-94e4-4b0f7d7cad5d",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "13a582bf-6cb4-475b-b09e-a199fdaf276d",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a data structure",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a data structure",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "13fbc11d-1e5d-4dbc-96db-4e1910065324",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a static and dynamic data structures",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a static and dynamic data structures",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "10b6aada-df28-46f3-8f6d-fbae4d728639",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "heading_2",
+      "heading_2": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Queues ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Queues ",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "154f67ee-0d32-43cf-b65e-43763e0ac9e0",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "05656227-6924-489d-87f5-5f959d613b51",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a queue",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a queue",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "195aab2b-d71e-4987-b2d5-94601904ff5b",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What are the three types of queues",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What are the three types of queues",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "d644b5eb-3821-4d55-9063-e96b17be74bc",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "text": []
+      }
+    },
+    {
+      "object": "block",
+      "id": "8dced0ec-2d93-414d-9f1a-204afa82a294",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "heading_2",
+      "heading_2": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Stacks",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Stacks",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "9c0b4e3b-e1a9-437b-a7f6-20091b94b340",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "e347abf9-c593-48e8-b0c6-4e9bfe3d6ed8",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a stack?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a stack?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "b14a273d-8023-412f-a9d7-741e571a6a4c",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "heading_2",
+      "heading_2": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Hash Tables ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Hash Tables ",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "513198af-6047-4da9-9f31-1c8534b72de1",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "60323487-1105-458a-a28c-9a9b62237206",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a hash table",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a hash table",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "208b633b-3f4d-4db0-a10d-c353063c3a5f",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a dictionary?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a dictionary?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "59dc4cd7-f3ed-4b3c-85c2-654641917fcb",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "text": []
+      }
+    },
+    {
+      "object": "block",
+      "id": "81bed958-6922-431a-9485-a7f10d503831",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "heading_2",
+      "heading_2": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Graphs and Trees",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Graphs and Trees",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "16a16552-a31e-4e28-88c2-1456995ef925",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "fc45b248-21a1-43df-a7d4-4c619e606502",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a graph?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a graph?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "e8523628-f72b-4f62-967e-614e38044fff",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a tree",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a tree",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "52d2771d-083f-40e6-927b-72441414e860",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "heading_2",
+      "heading_2": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Vectors",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Vectors",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "075b67d1-5ef2-4ffe-9d2b-a07d3f9bfdb8",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "36f2547e-16f9-4189-ba56-a16435b1999d",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a vector",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a vector",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "a1c4553f-753e-41a7-84ea-90b5c7c198bc",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "text": []
+      }
+    },
+    {
+      "object": "block",
+      "id": "2c8ecffb-622b-4509-be49-2d3a41365378",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "heading_2",
+      "heading_2": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Arrays",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Arrays",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "cc962720-4b83-403d-8435-0fa42329ee30",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "34925b0f-4720-4f04-9475-1173826164c8",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is an array",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is an array",
+            "href": null
+          }
+        ]
+      }
+    }
+  ],
+  "next_cursor": null,
+  "has_more": false
+}

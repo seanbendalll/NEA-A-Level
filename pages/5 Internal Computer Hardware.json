@@ -1,0 +1,1482 @@
+{
+  "object": "list",
+  "results": [
+    {
+      "object": "block",
+      "id": "e0e9b278-6029-413b-940d-fe0fbf76468a",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "breadcrumb",
+      "breadcrumb": {}
+    },
+    {
+      "object": "block",
+      "id": "e83d1922-e94f-4493-8056-01e2ff0a372d",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "c44a2838-158f-40cd-82ef-63b6f204bcd8",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "image",
+      "image": {
+        "caption": [],
+        "type": "file",
+        "file": {
+          "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b334f910-9bf9-4986-80c9-1444a297d06e/Screenshot_2020-09-14_at_14.25.04.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211129%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211129T200724Z&X-Amz-Expires=3600&X-Amz-Signature=24a49315955586c84936ecb1f3030da8ab1a257c96580b589f21364456c74cb7&X-Amz-SignedHeaders=host&x-id=GetObject",
+          "expiry_time": "2021-11-29T21:07:24.521Z"
+        }
+      }
+    },
+    {
+      "object": "block",
+      "id": "bbff03f4-1e81-42e2-ba79-f2ff9eeced73",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "id": "f24c6f4c-5d07-4c08-826f-c8914e4cf0da",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "heading_2",
+      "heading_2": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "CHAPTER 32 - PAGE 267 ON THE BOOK",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "CHAPTER 32 - PAGE 267 ON THE BOOK",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "f04c448c-e0aa-45a3-b1a0-1d30c462560a",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is the definition of a computer system?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is the definition of a computer system?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "750bddbb-efb1-49f7-981c-22e47853e48f",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is the definition of a processor",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is the definition of a processor",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "2d417eb5-6e8d-42aa-94f8-ccb9cb3aab73",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What are transistors used for? + what are they?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What are transistors used for? + what are they?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "377bceec-e0e1-4a50-8f41-c381323aa062",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What are the four primary components of the CPU?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What are the four primary components of the CPU?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "101cbcd4-0878-46cd-93b6-42adbf3930ba",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What are I/O controllers?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What are I/O controllers?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "3af6b2a9-ac5e-47d9-92e8-34c9676f4c57",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a device driver",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a device driver",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "f4f8bc09-23a8-4fe8-ad93-7d234b83ec84",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a bus (A LEVEL DEFINITION)",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a bus (A LEVEL DEFINITION)",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "6d6414a8-0b50-4885-bd83-2cb4d16a39b1",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "How is data sent via buses (3 buses)",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "How is data sent via buses (3 buses)",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "bdffa8cf-5e9f-4088-952c-9ea3f232bf2e",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What are the 5 types of control signals",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What are the 5 types of control signals",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "195e4ed7-56e0-41bc-81d6-18968161b13c",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "heading_2",
+      "heading_2": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Factors Affecting the CPU",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Factors Affecting the CPU",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "f9fd426d-ea18-451a-abf7-c6a99cad868a",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What are the 7 factors affecting the performance of the CPU",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What are the 7 factors affecting the performance of the CPU",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "b6aec41e-8e5a-49f6-8f64-927dd35a5fd4",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is an instruction made of?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is an instruction made of?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "7841a850-49c0-4022-a497-c5d2e9635e8f",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "text": []
+      }
+    },
+    {
+      "object": "block",
+      "id": "9914d4f7-26e9-46b2-9eaf-ba37ed39831d",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "heading_3",
+      "heading_3": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Von Neumann and Harvard Architectures",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Von Neumann and Harvard Architectures",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "e02077cb-6abe-46e0-88e8-d04050adc413",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is the von neumann architecture?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is the von neumann architecture?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "0bf59a45-8cf9-4acf-9c44-16c1719cdd2a",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is the key difference between the Von Neumann architecture and the Harvard architecture?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is the key difference between the Von Neumann architecture and the Harvard architecture?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "459a655c-68a6-4c53-8fe6-42922b4e45f9",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Why is the von neumann architecture used?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Why is the von neumann architecture used?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "366ce558-c9d4-4cc0-8bfa-6e7296c05e6d",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is pipelining",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is pipelining",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "7a5887f4-bc70-40d0-8962-7ebf9177f5c1",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "heading_2",
+      "heading_2": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "CHAPTER 33 - PAGE 274 ON THE BOOK",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "CHAPTER 33 - PAGE 274 ON THE BOOK",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "79197fee-2795-4d89-a4b2-7b2e1bae853b",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is the purpose of the control unit?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is the purpose of the control unit?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "8c3054be-6e85-4e91-a459-565ad50ebb69",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is the status register",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is the status register",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "2758463e-bfb4-4fe0-954e-f058412e9288",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is the CIR",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is the CIR",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "2be21441-e289-439c-8459-4899e927c899",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is the accumulator",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is the accumulator",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "966b5595-a292-4c61-8962-c20f1f6d145c",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is the program counter?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is the program counter?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "f52a32d6-2d55-4f79-b1b0-8e5037b41482",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is the MAR",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is the MAR",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "d7ebc867-6e4e-48f4-bc14-bde99864d893",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is the ALU",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is the ALU",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "07b03834-bc58-4d9a-a61b-a2e9ac36c1e2",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is the system clock?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is the system clock?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "53b4011a-2cc3-4d6c-af44-9b13e3f35345",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is the General Purpose registers",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is the General Purpose registers",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "913aac12-dc76-43a8-abde-0d414fbedba0",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is the special registers ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is the special registers ",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "3a97eb86-784b-44c5-9461-5d1b8b6e5f68",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is the MDR",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is the MDR",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "13a812a2-d540-4966-a3b5-51736f52fd88",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is the system bus",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is the system bus",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "a3f5a7e7-3c03-4413-8457-99d20a3b2291",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is the general purpose of the fetch, decode execute cycle (steps)",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is the general purpose of the fetch, decode execute cycle (steps)",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "a7e3c9d1-68a5-4a8c-bd79-0badb87c8607",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What are interrupts and what role do they play?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What are interrupts and what role do they play?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "cc005a79-a333-4cde-949d-ab78ef16532d",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is the interrupt register (routine)?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is the interrupt register (routine)?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "ba221e29-6460-4855-81e2-0f4ad0939a92",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "heading_2",
+      "heading_2": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "CHAPTER 34 - THE PROCESSOR INSTRUCTION SET AND ADDRESSING MODES ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "CHAPTER 34 - THE PROCESSOR INSTRUCTION SET AND ADDRESSING MODES ",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "9bf7f342-980e-447e-a635-c9f6a8022916",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is an instruction set?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is an instruction set?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "8453c6f8-b7fc-42c5-8782-9d288325f989",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What are the differences between the RISC and the CISC",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What are the differences between the RISC and the CISC",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "a5662303-a454-4070-a2f0-0216c35789d6",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What are the four main components fo a typical assembly language statement?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What are the four main components fo a typical assembly language statement?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "c29057c5-1f44-4a53-8db6-0f9aac76d380",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What are the instructions for the following binary codes",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What are the instructions for the following binary codes",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "da3e0d14-5927-466a-a9a3-5a6e99b1a56f",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "text": []
+      }
+    },
+    {
+      "object": "block",
+      "id": "689c19cd-6503-42b0-b082-363ef5baf9ae",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "text": []
+      }
+    },
+    {
+      "object": "block",
+      "id": "946d5d8e-797e-4169-a99a-99a609ddfb03",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "heading_2",
+      "heading_2": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "PART 4 - ASSEMBLY LANGUAGE",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "PART 4 - ASSEMBLY LANGUAGE",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "fb0dcfdd-402d-4e7e-9681-a20ea206e210",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What are the the four types of operation codes?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What are the the four types of operation codes?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "5de5eb5d-8866-49ce-b484-159ace230191",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "paragraph",
+      "paragraph": {
+        "text": []
+      }
+    },
+    {
+      "object": "block",
+      "id": "f03ce2b9-e882-40ec-81e7-71462f5063d3",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": false,
+      "archived": false,
+      "type": "heading_2",
+      "heading_2": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "External Hardware Devices",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "External Hardware Devices",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "4e48758d-26b7-41ad-a8a8-cd9dc583f09d",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What are barcodes",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What are barcodes",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "55efc008-05e8-4885-83d7-c0afcef4c4e9",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What do digital cameras consist of and how does it work to capture a picture?",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What do digital cameras consist of and how does it work to capture a picture?",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "ea8eb009-879c-496c-a2a0-e58ef6db9e32",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is a laser printer ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is a laser printer ",
+            "href": null
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "id": "4a6da6c2-6128-4a10-a2ad-efb03bec3922",
+      "created_time": "2021-11-22T21:42:00.000Z",
+      "last_edited_time": "2021-11-22T21:42:00.000Z",
+      "has_children": true,
+      "archived": false,
+      "type": "toggle",
+      "toggle": {
+        "text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "What is RFID",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "What is RFID",
+            "href": null
+          }
+        ]
+      }
+    }
+  ],
+  "next_cursor": null,
+  "has_more": false
+}

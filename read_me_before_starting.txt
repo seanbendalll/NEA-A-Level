@@ -1,0 +1,17 @@
+14.12.21:
+- fixed the definequestion function, and it will now take a block and give a result for all the questions within that block successfully
+- need to work on the fact that the questions have void subtopics and topics, and find a way of passing the topic through to all the questions.
+- try and improve efficiency, potentially?
+
+15.12.21:
+- fixed the subtopic and topics issue, getting rid of the sub topics entirely and filtering the topic parameter through the code
+- now we just need to bold out the questions in the notion documents
+- clean up the fetch.py file
+- come up with an idea for how to put it in said database.
+
+18.12.21:
+- the subtopic and topic issue was not fixed, as we had not changed the question class
+- worked on bolding out questions in the notion documents, made progress
+
+20.12.21:
+- full list of questions acquired
