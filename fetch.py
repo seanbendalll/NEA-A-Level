@@ -106,6 +106,7 @@ def defineQuestion(block, questions, current_topic):
             try:
                 if block_children[block_children.index(child) + 1].is_answer != True: #if the next block is not part of the current answer the question has finished
                     question = Question(block.topic, block.content, answer_type, ' '.join(answer))
+                    question.SetAnswerType(answer_type) #changes the "paragraph" to "text"
                     questions.append(question)
             except:
                 continue

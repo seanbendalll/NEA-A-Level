@@ -15,3 +15,10 @@
 
 20.12.21:
 - full list of questions acquired
+
+25.1.22:
+- need to create sql database filled with all the questions
+- we have a list of blocks, containing the questions. The questions have a topic, an answer, a question, and an answer_type.
+- work on creating user interface using tkinter
+- tkinter currently not working, maybe wrong version of python? try fix.
+- try to implement version control.
