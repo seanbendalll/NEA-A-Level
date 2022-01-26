@@ -26,3 +26,6 @@
 26.1.22:
 - version control implemented
 - user interface in progress
+- user interface initial completed, menu with changing views working
+- need to work on test screen first
+- work on data model.
