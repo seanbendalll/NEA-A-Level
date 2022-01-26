@@ -22,3 +22,7 @@
 - work on creating user interface using tkinter
 - tkinter currently not working, maybe wrong version of python? try fix.
 - try to implement version control.
+
+26.1.22:
+- version control implemented
+- user interface in progress
