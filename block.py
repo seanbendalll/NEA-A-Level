@@ -27,8 +27,9 @@ class Question:
     def __str__(self):
         return str("Question(" + self.topic + ", "  + self.question + ", " + self.answer_type + ", " + self.answer + ")")
 
-    def SetAnswerType(self, block_type):
-        if (block_type == "paragraph"):
-            self.answer_type = "text"
-        elif (block_type == "image"):
-            self.answer_type = "image"
+"""
+
+QUESTION LOOKS LIKE
+
+Question(1 Fundamentals of programming, What is a text file, text, a text file may have several text fields...)
+"""

@@ -1,7 +1,7 @@
 import requests, json, os
 from block import Block
 from block import Question
-
+import model
 
 #getting the key from the environment variables.
 TOKEN = os.getenv('NOTION_KEY')
@@ -82,9 +82,14 @@ def defineBlock(json_result, current_topic):
             return Block(json_result['id'], type, json_result['has_children'], json_result[type]['file']['url'], current_topic, True) #sets to True as image will always be answer
         except:
             return emptyBlock()
+    elif type == 'toggle':
+        try:
+            return Block(json_result['id'], "toggle", json_result['has_children'], json_result[type]['text'][0]['text']['content'], current_topic, json_result[type]['text'][0]['annotations']['bold'])
+        except:
+            return emptyBlock()
     else:
         try:
-            return Block(json_result['id'], type, json_result['has_children'], json_result[type]['text'][0]['text']['content'], current_topic, json_result[type]['text'][0]['annotations']['bold'])
+            return Block(json_result['id'], "text", json_result['has_children'], json_result[type]['text'][0]['text']['content'], current_topic, json_result[type]['text'][0]['annotations']['bold'])
         except:
             return emptyBlock()
 
@@ -106,7 +111,6 @@ def defineQuestion(block, questions, current_topic):
             try:
                 if block_children[block_children.index(child) + 1].is_answer != True: #if the next block is not part of the current answer the question has finished
                     question = Question(block.topic, block.content, answer_type, ' '.join(answer))
-                    question.SetAnswerType(answer_type) #changes the "paragraph" to "text"
                     questions.append(question)
             except:
                 continue
@@ -123,15 +127,27 @@ def main():
     #getting all the pages from the main screen
     page_ids, topics = getPageIDs('fd532bfc5799420b84ac6285a0e419cd','all_pages')
 
+    paper_one_topics = [1, 2, 7, 8, 9]
     #gets the blocks from each page - only the first level blocks though.
-    for id in page_ids:
-        blocks = getBlocks(id, topics[page_ids.index(id)])
-        print("\n\nQUESTIONS FOR " + topics[page_ids.index(id)] + "ARE \n\n")
-        for block in blocks:
-            questions_for_topic = defineQuestion(block, [], topics[page_ids.index(id)])
-            for question in questions_for_topic:
-                print(question)
 
+    for id in page_ids:
+        topic_name = topics[page_ids.index(id)]
+        """
+        if (topic_name[1] == " " and int(topic_name[0]) in paper_one_topics) : #checks to see if its single digit and in paper 1
+            model.InsertIntoTopics(topic_name, 1)
+        else:
+            model.InsertIntoTopics(topic_name, 2)
+        """
+        blocks = getBlocks(id, topic_name)
+        #print("\n\nQUESTIONS FOR " + topics[page_ids.index(id)] + "ARE \n\n")
+        for block in blocks:
+            print("3")
+            questions_for_topic = defineQuestion(block, [], topic_name)
+            for question in questions_for_topic:
+                try:
+                    model.InsertIntoQuestions(question.topic, question.question, question.answer_type, question.answer)
+                except:
+                    print("Error occurred with question : ", question)
 
 #block ID for checksum block is https://www.notion.so/seanbendall/3-Data-Representation-f4e3f8367b01478b8fb6cef109ae9f86#31e170ba428441ad9b7720bee8b00d01
 

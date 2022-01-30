@@ -1,0 +1,1 @@
+CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))

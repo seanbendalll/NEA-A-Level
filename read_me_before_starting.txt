@@ -29,3 +29,20 @@
 - user interface initial completed, menu with changing views working
 - need to work on test screen first
 - work on data model.
+
+27.1.22:
+- need to build a data model
+- started to build a data model
+- data functions working.
+- need to finish data model.
+
+28.1.22:
+- continued working on data model. question system works
+- need to delete the initial questions table and remake it.
+- get topicID function returning nothing.
+- the error at the moment is the length of the answer type is too limited - need to just use image and (ELSE)
+
+29.1.22:
+- data model completed
+- can start working on implementation within the app
+- need to clean up the code.
