@@ -20,7 +20,7 @@ def showAnswer():
 def showQuestion():
     answer_frame.grid_forget()
     question_frame.grid(column = 0, row = 6, columnspan = 4)
-    
+
 def change_to_home_frame():
     home_frame.pack(fill = "both")
     test_frame.forget()
@@ -45,6 +45,7 @@ def change_to_progress_frame():
     home_frame.forget()
     learn_frame.forget()
     test_frame.forget()
+    FormatProgressScreen()
 
 title_font = tk.font.Font(family = "Helvetica", size = 36, weight = "bold")
 topic_font = tk.font.Font(family = "Helvetica", size = 28)
@@ -96,7 +97,7 @@ show_answer_button.grid(column = 0, row = 7, columnspan = 4)
 question_frame.grid(column = 0, row = 6, columnspan = 4)
 
 
-    
+
 #CODE FOR WHEN ANSWER IS SHOWN
 answer_frame = tk.Frame(test_frame)
 
@@ -149,7 +150,7 @@ def showProgress(subject):
     progress_pane = Toplevel()
     progress_pane.title(f"Progress for {subject}")
     progress_pane.resizable(False, False)
-    pane_size_x = 400
+    pane_size_x = 500
     pane_size_y = 300
     progress_pane.geometry("{}x{}".format(pane_size_x, pane_size_y))
 
@@ -157,7 +158,7 @@ def showProgress(subject):
     progress_font = tk.font.Font(family = "Helvetica", size = 16, weight = "bold")
     progress_label = tk.Label(progress_pane, text = f"Progress for - {subject}", height =2, font = progress_font)
     progress_label.grid(column = 0, row = 0, sticky = "ew", padx = 10)
-    
+
     #add a divider below the progress icon
     separator = ttk.Separator(progress_pane, orient = "horizontal")
     separator.grid(column = 0, row = 1, columnspan = 4, sticky = "ew", padx = 10)
@@ -171,13 +172,24 @@ def showProgress(subject):
     yellow_label.grid(column = 0, row = 4, sticky = "w", padx = 10)
     green_label = tk.Label(progress_pane, text = f"Green = {progress_dictionary['Green']}")
     green_label.grid(column = 0, row = 5, sticky = "w", padx = 10)
-    
+
+
     Toplevel.mainloop(root)
-    
-test_label = tk.Label(progress_frame, text = "3 Data Representation")
-test_button = tk.Button(progress_frame, text = "Click here for progress", command = lambda: showProgress("3 Data Representation"))
-test_label.grid(column = 0, row = 6, columnspan = 4)
-test_button.grid(column = 0, row = 7, columnspan = 4)
+
+def FormatProgressScreen():
+
+    topic_names = data_model.GetTopics()
+    #the first row should be row 6 - below the title
+    row = 6
+    for topic_name in topic_names:
+
+        test_label = tk.Label(progress_frame,width = 40, text = topic_name)
+        test_button = tk.Button(progress_frame,width = 15, text = "Click here for progress", command = lambda: showProgress(topic_name))
+        go_to_topic_button = tk.Button(progress_frame, width = 15, text = "Go To Topic")
+        test_label.grid(column = 0, row = row,columnspan = 2)
+        test_button.grid(column = 2, row = row, columnspan = 1)
+        go_to_topic_button.grid(column = 3, row = row, columnspan = 1)
+        row +=1
 
 #main startup
 home_frame.pack(fill = "both") #pack the frames but grid the stuff within the frames

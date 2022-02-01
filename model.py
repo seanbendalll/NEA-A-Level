@@ -27,6 +27,14 @@ class Model():
             print("The topic name could not be found")
         return topic_id
 
+    def GetTopics(self):
+        topics = []
+        get_topics_query = "SELECT TopicTitle FROM topics"
+        self.c.execute(get_topics_query)
+        for topic in self.c:
+            topics.append(topic[0])
+        return topics
+
     def GetProgress(self, subject_name):
         #selects the questions
         topic_id = self.GetTopicID(subject_name)
