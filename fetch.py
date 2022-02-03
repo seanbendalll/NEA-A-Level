@@ -163,6 +163,7 @@ def main():
         for block in blocks:
             questions_for_topic = defineQuestion(block, [], topic_name)
 
+
             for question in questions_for_topic:
                 if question.answer_type == "image":
                     print("inserting image ", question.question)
@@ -179,8 +180,8 @@ def main():
             print("Error occurred with question : ", question)
         """
 
-main()
 #block ID for checksum block is https://www.notion.so/seanbendall/3-Data-Representation-f4e3f8367b01478b8fb6cef109ae9f86#31e170ba428441ad9b7720bee8b00d01
+main()
 """
 image_questions = data_model.GetImageQuestions()
 for image_question in image_questions:
