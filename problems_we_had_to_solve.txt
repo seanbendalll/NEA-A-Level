@@ -1,3 +1,4 @@
 1. The fact that the answers change type ie images
 2. the fact that there were lots of placeholder blocks lying around
 3. the fact that multiple blocks were part of one answer
+4. The fact that the images in the datbase where of links that required authentication, had to go back into the fetch.py file and manually download them to an image file.

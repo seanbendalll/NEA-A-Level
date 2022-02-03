@@ -1,7 +1,9 @@
 import requests, json, os
 from block import Block
 from block import Question
-import model
+from model import Model
+
+data_model = Model()
 
 #getting the key from the environment variables.
 TOKEN = os.getenv('NOTION_KEY')
@@ -82,6 +84,7 @@ def defineBlock(json_result, current_topic):
             return Block(json_result['id'], type, json_result['has_children'], json_result[type]['file']['url'], current_topic, True) #sets to True as image will always be answer
         except:
             return emptyBlock()
+        dumpDataInFile("./testing.json", json_result)
     elif type == 'toggle':
         try:
             return Block(json_result['id'], "toggle", json_result['has_children'], json_result[type]['text'][0]['text']['content'], current_topic, json_result[type]['text'][0]['annotations']['bold'])
@@ -122,6 +125,19 @@ def defineQuestion(block, questions, current_topic):
 #copy of computer science
 #https://www.notion.so/seanbendall/Copy-of-Computer-Science-fd532bfc5799420b84ac6285a0e419cd
 
+#some of the answers are both image urls and text, so this separates them
+def GetURLFromImageAnswer(answer):
+    for i in range(0, len(answer) -1):
+        if (answer[i] == "h"):
+            if answer[i: i +5] == "https":
+                start_index = i
+        if (answer[i] == "G"):
+            if answer[i: i + 9] == "GetObject":
+                end_index = i + 9
+    return answer[start_index: end_index]
+
+
+
 #main function
 def main():
     #getting all the pages from the main screen
@@ -140,18 +156,42 @@ def main():
         """
         blocks = getBlocks(id, topic_name)
         #print("\n\nQUESTIONS FOR " + topics[page_ids.index(id)] + "ARE \n\n")
+
+        image_questions = data_model.GetImageQuestions()
+
+
         for block in blocks:
-            print("3")
             questions_for_topic = defineQuestion(block, [], topic_name)
+
             for question in questions_for_topic:
-                try:
-                    model.InsertIntoQuestions(question.topic, question.question, question.answer_type, question.answer)
-                except:
-                    print("Error occurred with question : ", question)
+                if question.answer_type == "image":
+                    print("inserting image ", question.question)
+                    image_url = GetURLFromImageAnswer(question.answer)
+                    response = requests.get(image_url)
+                    print(response)
+                    file = open(f"images/{question.question}.png", "wb")
+                    file.write(response.content)
+                    file.close()
 
+        """
+        try:
+            model.InsertIntoQuestions(question.topic, question.question, question.answer_type, question.answer)            except:
+            print("Error occurred with question : ", question)
+        """
+
+main()
 #block ID for checksum block is https://www.notion.so/seanbendall/3-Data-Representation-f4e3f8367b01478b8fb6cef109ae9f86#31e170ba428441ad9b7720bee8b00d01
+"""
+image_questions = data_model.GetImageQuestions()
+for image_question in image_questions:
 
-
+    image_url = GetURLFromImageAnswer(image_questions[image_question])
+    response = requests.get(image_url)
+    print(response)
+    file = open(f"images/{image_question}.png", "wb")
+    file.write(response.content)
+    file.close()
+"""
 """
 test_block = Block("31e170ba-4284-41ad-9b77-20bee8b00d01", 'toggle', True, "What are the four techniques that can be used to check for errors in transmission?", "3 Data Representation", "#2 Bytes, Bits and Binary", False)
 blocks = []
@@ -159,4 +199,20 @@ questions = defineQuestion(test_block, [])
 for question in questions:
     print(question)
 """
-main()
+#https://www.notion.so/seanbendall/P1-U3-Data-Representation-0f712768400640a1b67821d9e0f1e73a#72f6202d3feb47e5b418a933aea89771
+"""
+block_test_id = "72f6202d-3feb-47e5-b418-a933aea89771"
+readURL = f"https://api.notion.com/v1/blocks/{block_test_id}/children"
+results = requests.request("GET", readURL, headers=headers)
+data = results.json()
+for result in data["results"]:
+    if result["type"] == "image":
+        image_url = result["image"]["file"]["url"]
+        response = requests.get(image_url)
+        file = open("image.png", "wb")
+        file.write(response.content)
+        file.close()
+
+print(data)
+dumpDataInFile("test", data)
+"""

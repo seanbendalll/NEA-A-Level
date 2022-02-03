@@ -21,11 +21,30 @@ class Model():
     def GetTopicID(self, subject_name):
         topicIDQuery = f"SELECT TopicID FROM topics WHERE TopicTitle = '{subject_name}'"
         self.c.execute(topicIDQuery)
+        topic_id = -1
         try:
             topic_id = self.c.fetchall()[0][0]
         except IndexError:
             print("The topic name could not be found")
         return topic_id
+
+    def GetImageQuestions(self):
+        image_urls = []
+        image_titles = []
+        imageurl_query = "SELECT AnswerText FROM questions WHERE AnswerType = 'image'"
+        self.c.execute(imageurl_query)
+        for image_url in self.c:
+            image_urls.append(image_url[0])
+        imagetitle_query = "SELECT QuestionText FROM questions WHERE AnswerType = 'image'"
+        self.c.execute(imagetitle_query)
+        for imagetitle in self.c:
+            image_titles.append(imagetitle[0])
+        image_questions = {}
+        for i in range(1, len(image_urls)):
+
+            image_questions[image_titles[i -1]] = image_urls[i -1]
+        return image_questions
+
 
     def GetTopics(self):
         topics = []
@@ -34,6 +53,13 @@ class Model():
         for topic in self.c:
             topics.append(topic[0])
         return topics
+
+    def ResetQuestions(self):
+        reset_query = """
+        UPDATE questions
+        SET Confidence = 'red'
+        """
+        self.c.execute(reset_query)
 
     def GetProgress(self, subject_name):
         #selects the questions
@@ -151,3 +177,4 @@ class Model():
                 print("error message is: ", e.msg)
 
 model = Model()
+#model.GetImageQuestions()

@@ -1,14 +1,15 @@
 import tkinter as tk
 from tkinter import ttk
-from tkinter import font
+from tkinter import font, messagebox
 from tkinter import *
 from model import Model
+from functools import partial
 
 root = tk.Tk()
 root.title("ALCA - A Level Computer Science Application")
 root.resizable(False, False)
 root_size_x = 865
-root_size_y = 700
+root_size_y = 600
 root.geometry("{}x{}".format(root_size_x, root_size_y))
 
 data_model = Model()
@@ -101,6 +102,10 @@ question_frame.grid(column = 0, row = 6, columnspan = 4)
 #CODE FOR WHEN ANSWER IS SHOWN
 answer_frame = tk.Frame(test_frame)
 
+img = PhotoImage(file = 'testing.png')
+test_image = tk.Label(answer_frame, image = img, width = 55, height = 55)
+test_image.grid(column = 0, row = 6, columnspan = 4)
+
 green_button = tk.Button(answer_frame, bg = "green", text = "Very Confident", height = 5, width = 15)
 orange_button = tk.Button(answer_frame, bg = "orange", text = "Confident", height = 5, width = 15)
 yellow_button = tk.Button(answer_frame, bg = "yellow", text = "Mediocre", height = 5, width = 15)
@@ -145,36 +150,59 @@ test_screen_button_p.grid(column = 1, row = 1)
 learn_screen_button_p.grid(column = 2, row = 1)
 progress_screen_button_p.grid(column = 3, row = 1)
 
-def showProgress(subject):
+def ResetQuestions():
+    confirmation = messagebox.askquestion("Warning", "Are you sure?")
+    if confirmation == 'yes':
+        data_model.ResetQuestions()
+
+def SumDictionaryKeys(dict):
+    num = 0
+    for value in dict:
+        num += dict[value]
+    return num
+
+def showProgress(topic_name):
     #progress pane modification
     progress_pane = Toplevel()
-    progress_pane.title(f"Progress for {subject}")
+    progress_pane.title(f"Progress for {topic_name}")
     progress_pane.resizable(False, False)
-    pane_size_x = 500
-    pane_size_y = 300
+    pane_size_x = 480
+    pane_size_y = 225
     progress_pane.geometry("{}x{}".format(pane_size_x, pane_size_y))
 
     #adds the title of the progress tab
-    progress_font = tk.font.Font(family = "Helvetica", size = 16, weight = "bold")
-    progress_label = tk.Label(progress_pane, text = f"Progress for - {subject}", height =2, font = progress_font)
-    progress_label.grid(column = 0, row = 0, sticky = "ew", padx = 10)
+    progress_title_font = tk.font.Font(family = "Helvetica", size = 16, weight = "bold")
+    progress_font = tk.font.Font(family = "Helvetica", size = 14)
+    progress_label = tk.Label(progress_pane, text = f"Progress for - {topic_name}.", height =2,width = 50, font = progress_title_font, anchor = "w")
+    progress_label.grid(column = 0, row = 0, sticky = "ew", padx = 10, columnspan = 4)
 
     #add a divider below the progress icon
     separator = ttk.Separator(progress_pane, orient = "horizontal")
     separator.grid(column = 0, row = 1, columnspan = 4, sticky = "ew", padx = 10)
 
-    progress_dictionary = data_model.GetProgress(subject)
-    red_label = tk.Label(progress_pane, text = f"Red = {progress_dictionary['Red']}")
-    red_label.grid(column = 0, row = 2, sticky = "w", padx = 10)
-    orange_label = tk.Label(progress_pane, text = f"Orange = {progress_dictionary['Orange']}")
-    orange_label.grid(column = 0, row = 3, sticky = "w", padx = 10)
-    yellow_label = tk.Label(progress_pane, text = f"Yellow = {progress_dictionary['Yellow']}")
-    yellow_label.grid(column = 0, row = 4, sticky = "w", padx = 10)
-    green_label = tk.Label(progress_pane, text = f"Green = {progress_dictionary['Green']}")
-    green_label.grid(column = 0, row = 5, sticky = "w", padx = 10)
+    progress_dictionary = data_model.GetProgress(topic_name)
+    red_label = tk.Label(progress_pane, text = f"Very Unconfident = {progress_dictionary['Red']}", font = progress_font)
+    red_label.grid(column = 0, row = 2, sticky = "w", padx = 10, pady = 7)
+    orange_label = tk.Label(progress_pane, text = f"Unconfident = {progress_dictionary['Orange']}", font = progress_font)
+    orange_label.grid(column = 0, row = 3, sticky = "w", padx = 10, pady = 7)
+    yellow_label = tk.Label(progress_pane, text = f"Confident = {progress_dictionary['Yellow']}", font = progress_font)
+    yellow_label.grid(column = 0, row = 4, sticky = "w", padx = 10, pady = 7)
+    green_label = tk.Label(progress_pane, text = f"Very Confident = {progress_dictionary['Green']}", font = progress_font)
+    green_label.grid(column = 0, row = 5, sticky = "w", padx = 10, pady = 7)
+
+    percentage = int(progress_dictionary['Green'] / SumDictionaryKeys(progress_dictionary) * 100)
+    percentage_font = tk.font.Font(family = "Helvetica", size = 36)
+    percentage = tk.Label(progress_pane, text = f"{percentage}%",font = percentage_font)
+    percentage.grid(column = 2, row = 3, rowspan = 2)
 
 
+    exit_button = tk.Button(progress_pane, text = "Exit", command = progress_pane.destroy)
+    exit_button.grid(column = 3, row = 6, sticky = "se")
     Toplevel.mainloop(root)
+
+def GoToTopic(topic_name):
+
+    print("")
 
 def FormatProgressScreen():
 
@@ -184,13 +212,16 @@ def FormatProgressScreen():
     for topic_name in topic_names:
 
         test_label = tk.Label(progress_frame,width = 40, text = topic_name)
-        test_button = tk.Button(progress_frame,width = 15, text = "Click here for progress", command = lambda: showProgress(topic_name))
-        go_to_topic_button = tk.Button(progress_frame, width = 15, text = "Go To Topic")
+        arguments = partial(showProgress, topic_name)
+        test_button = tk.Button(progress_frame,width = 15, text = "Click here for progress", command = arguments)
+        go_to_topic_button = tk.Button(progress_frame, width = 15, text = "Test yourself")
         test_label.grid(column = 0, row = row,columnspan = 2)
         test_button.grid(column = 2, row = row, columnspan = 1)
         go_to_topic_button.grid(column = 3, row = row, columnspan = 1)
-        row +=1
 
+        row +=1
+    reset_button = tk.Button(progress_frame, text = "Reset all to very unconfident", command = ResetQuestions)
+    reset_button.grid(column = 0, columnspan = 4, row = 20, pady = 10)
 #main startup
 home_frame.pack(fill = "both") #pack the frames but grid the stuff within the frames
 root.mainloop()
