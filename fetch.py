@@ -182,38 +182,3 @@ def main():
 
 #block ID for checksum block is https://www.notion.so/seanbendall/3-Data-Representation-f4e3f8367b01478b8fb6cef109ae9f86#31e170ba428441ad9b7720bee8b00d01
 main()
-"""
-image_questions = data_model.GetImageQuestions()
-for image_question in image_questions:
-
-    image_url = GetURLFromImageAnswer(image_questions[image_question])
-    response = requests.get(image_url)
-    print(response)
-    file = open(f"images/{image_question}.png", "wb")
-    file.write(response.content)
-    file.close()
-"""
-"""
-test_block = Block("31e170ba-4284-41ad-9b77-20bee8b00d01", 'toggle', True, "What are the four techniques that can be used to check for errors in transmission?", "3 Data Representation", "#2 Bytes, Bits and Binary", False)
-blocks = []
-questions = defineQuestion(test_block, [])
-for question in questions:
-    print(question)
-"""
-#https://www.notion.so/seanbendall/P1-U3-Data-Representation-0f712768400640a1b67821d9e0f1e73a#72f6202d3feb47e5b418a933aea89771
-"""
-block_test_id = "72f6202d-3feb-47e5-b418-a933aea89771"
-readURL = f"https://api.notion.com/v1/blocks/{block_test_id}/children"
-results = requests.request("GET", readURL, headers=headers)
-data = results.json()
-for result in data["results"]:
-    if result["type"] == "image":
-        image_url = result["image"]["file"]["url"]
-        response = requests.get(image_url)
-        file = open("image.png", "wb")
-        file.write(response.content)
-        file.close()
-
-print(data)
-dumpDataInFile("test", data)
-"""

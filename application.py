@@ -4,12 +4,13 @@ from tkinter import font, messagebox
 from tkinter import *
 from model import Model
 from functools import partial
+from PIL import ImageTk, Image
 
 root = tk.Tk()
 root.title("ALCA - A Level Computer Science Application")
 root.resizable(False, False)
-root_size_x = 865
-root_size_y = 600
+root_size_x = 1300
+root_size_y = 750
 root.geometry("{}x{}".format(root_size_x, root_size_y))
 
 data_model = Model()
@@ -59,10 +60,10 @@ progress_frame = tk.Frame(root, height = 500, width = 5)
 
 #MARK - HOME SCREEN CODE
 greeting_for_home = tk.Label(home_frame, text="Welcome to home screen", height = 2, font = title_font)
-home_screen_button_h = tk.Button(home_frame, text = "HOME", width = 20, height = 2, command = change_to_home_frame)
-test_screen_button_h = tk.Button(home_frame, text = "TEST", width = 20, height = 2, command = change_to_test_frame)
-learn_screen_button_h = tk.Button(home_frame, text = "LEARN", width = 20, height = 2, command = change_to_learn_frame)
-progress_screen_button_h = tk.Button(home_frame, text = "PROGRESS", width = 20, height = 2, command = change_to_progress_frame)
+home_screen_button_h = tk.Button(home_frame, text = "HOME", width = 32, height = 2, command = change_to_home_frame)
+test_screen_button_h = tk.Button(home_frame, text = "TEST", width = 32, height = 2, command = change_to_test_frame)
+learn_screen_button_h = tk.Button(home_frame, text = "LEARN", width = 32, height = 2, command = change_to_learn_frame)
+progress_screen_button_h = tk.Button(home_frame, text = "PROGRESS", width = 32, height = 2, command = change_to_progress_frame)
 
 greeting_for_home.grid(column = 0, row = 0, columnspan = 4)
 home_screen_button_h.grid(column = 0, row = 1)
@@ -74,10 +75,10 @@ separator.grid(column = 0, row = 4, columnspan = 4, sticky = "ew", pady = 10)
 
 #MARK - TEST SCREEN CODE
 greeting_for_test = tk.Label(test_frame, text="TEST", height = 2, font = title_font)
-home_screen_button_t = tk.Button(test_frame, text = "HOME", width = 20, height = 2, command = change_to_home_frame)
-test_screen_button_t = tk.Button(test_frame, text = "TEST", width = 20, height = 2, command = change_to_test_frame)
-learn_screen_button_t = tk.Button(test_frame, text = "LEARN", width = 20, height = 2, command = change_to_learn_frame)
-progress_screen_button_t = tk.Button(test_frame, text = "PROGRESS", width = 20, height = 2, command = change_to_progress_frame)
+home_screen_button_t = tk.Button(test_frame, text = "HOME", width = 32, height = 2, command = change_to_home_frame)
+test_screen_button_t = tk.Button(test_frame, text = "TEST", width = 32, height = 2, command = change_to_test_frame)
+learn_screen_button_t = tk.Button(test_frame, text = "LEARN", width = 32, height = 2, command = change_to_learn_frame)
+progress_screen_button_t = tk.Button(test_frame, text = "PROGRESS", width = 32, height = 2, command = change_to_progress_frame)
 
 greeting_for_test.grid(column = 0, row = 0, columnspan = 4)
 home_screen_button_t.grid(column = 0, row = 1)
@@ -102,9 +103,25 @@ question_frame.grid(column = 0, row = 6, columnspan = 4)
 #CODE FOR WHEN ANSWER IS SHOWN
 answer_frame = tk.Frame(test_frame)
 
-img = PhotoImage(file = 'testing.png')
-test_image = tk.Label(answer_frame, image = img, width = 55, height = 55)
-test_image.grid(column = 0, row = 6, columnspan = 4)
+photo_canvas = Canvas(answer_frame, width = 1200, height = 400)
+photo_canvas.grid(column = 0, row = 6, columnspan = 4)
+img = (Image.open('images/Class A.png'))
+img_for_dimensions = PhotoImage(file = 'images/Class A.png')
+img_width = img_for_dimensions.width()
+img_height = img_for_dimensions.height()
+img_hw_ratio = int(img_width / img_height)
+print("width is ", img_width, " and image height is ", img_height)
+
+
+if img_height < 300:
+    resized_image = img.resize((1000, 1000 * img_hw_ratio), Image.ANTIALIAS)
+    new_image = ImageTk.PhotoImage(resized_image)
+    photo_canvas.create_image(100,10, anchor = NW, image = new_image)
+elif img_height > 300:
+    resized_image = img.resize((350 / img_hw_ratio, 350), Image.ANTIALIAS)
+    new_image = ImageTk.PhotoImage(resized_image)
+    photo_canvas.create_image(100,10, anchor = NW, image = new_image)
+
 
 green_button = tk.Button(answer_frame, bg = "green", text = "Very Confident", height = 5, width = 15)
 orange_button = tk.Button(answer_frame, bg = "orange", text = "Confident", height = 5, width = 15)
@@ -122,10 +139,10 @@ skip_button.grid(column = 0, row = 8, columnspan = 4, pady = 10)
 
 #MARK - LEARN SCREEN CODE
 greeting_for_learn = tk.Label(learn_frame, text="Welcome to learn screen", height = 2, font = title_font)
-home_screen_button_l = tk.Button(learn_frame, text = "HOME", width = 20, height = 2, command = change_to_home_frame)
-test_screen_button_l = tk.Button(learn_frame, text = "TEST", width = 20, height = 2, command = change_to_test_frame)
-learn_screen_button_l = tk.Button(learn_frame, text = "LEARN", width = 20, height = 2, command = change_to_learn_frame)
-progress_screen_button_l = tk.Button(learn_frame, text = "PROGRESS", width = 20, height = 2, command = change_to_progress_frame)
+home_screen_button_l = tk.Button(learn_frame, text = "HOME", width = 32, height = 2, command = change_to_home_frame)
+test_screen_button_l = tk.Button(learn_frame, text = "TEST", width = 32, height = 2, command = change_to_test_frame)
+learn_screen_button_l = tk.Button(learn_frame, text = "LEARN", width = 32, height = 2, command = change_to_learn_frame)
+progress_screen_button_l = tk.Button(learn_frame, text = "PROGRESS", width = 32, height = 2, command = change_to_progress_frame)
 
 separator = ttk.Separator(learn_frame, orient = "horizontal")
 separator.grid(column = 0, row = 4, columnspan = 4, sticky = "ew", pady = 10)
@@ -135,12 +152,15 @@ test_screen_button_l.grid(column = 1, row = 1)
 learn_screen_button_l.grid(column = 2, row = 1)
 progress_screen_button_l.grid(column = 3, row = 1)
 
+
+
+
 #MARK - PROGRESS SCREEN CODE
 greeting_for_progress = tk.Label(progress_frame, text="Welcome to progress screen", height = 2, font = title_font)
-home_screen_button_p = tk.Button(progress_frame, text = "HOME", width = 20, height = 2, command = change_to_home_frame)
-test_screen_button_p = tk.Button(progress_frame, text = "TEST", width = 20, height = 2, command = change_to_test_frame)
-learn_screen_button_p = tk.Button(progress_frame, text = "LEARN", width = 20, height = 2, command = change_to_learn_frame)
-progress_screen_button_p = tk.Button(progress_frame, text = "PROGRESS", width = 20, height = 2, command = change_to_progress_frame)
+home_screen_button_p = tk.Button(progress_frame, text = "HOME", width = 32, height = 2, command = change_to_home_frame)
+test_screen_button_p = tk.Button(progress_frame, text = "TEST", width = 32, height = 2, command = change_to_test_frame)
+learn_screen_button_p = tk.Button(progress_frame, text = "LEARN", width = 32, height = 2, command = change_to_learn_frame)
+progress_screen_button_p = tk.Button(progress_frame, text = "PROGRESS", width = 32, height = 2, command = change_to_progress_frame)
 separator = ttk.Separator(progress_frame, orient = "horizontal")
 separator.grid(column = 0, row = 4, columnspan = 4, sticky = "ew", pady = 10)
 
