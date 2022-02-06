@@ -13,15 +13,16 @@ class Progress():
     def __init__(self, root):
         self.root = root
         self.progress_frame = tk.Frame(root, height = 500, width = 5)
-        self.InitialiseBaseFrame(self.root)
         self.data_model = Model()
+        self.InitialiseBaseFrame(self.root)
+
 
     def InitialiseBaseFrame(self, root):
         greeting_for_progress = tk.Label(self.progress_frame, text="Welcome to progress screen", height = 2, font = Fonts().title_font)
-        home_screen_button_p = tk.Button(self.progress_frame, text = "HOME", width = 32, height = 2)
-        test_screen_button_p = tk.Button(self.progress_frame, text = "TEST", width = 32, height = 2)
-        learn_screen_button_p = tk.Button(self.progress_frame, text = "LEARN", width = 32, height = 2)
-        progress_screen_button_p = tk.Button(self.progress_frame, text = "PROGRESS", width = 32, height = 2)
+        home_screen_button_p = tk.Button(self.progress_frame, text = "HOME", width = 32, height = 2, command = ChangeToHomeFrame)
+        test_screen_button_p = tk.Button(self.progress_frame, text = "TEST", width = 32, height = 2, command = ChangeToTestFrame)
+        learn_screen_button_p = tk.Button(self.progress_frame, text = "LEARN", width = 32, height = 2, command = ChangeToLearnFrame)
+        progress_screen_button_p = tk.Button(self.progress_frame, text = "PROGRESS", width = 32, height = 2, command = ChangeToProgressFrame)
         separator = ttk.Separator(self.progress_frame, orient = "horizontal")
         separator.grid(column = 0, row = 4, columnspan = 4, sticky = "ew", pady = 10)
 
@@ -35,6 +36,12 @@ class Progress():
         confirmation = tk.messagebox.askquestion("Warning", "Are you sure?")
         if confirmation == 'yes':
             self.data_model.ResetQuestions()
+
+    def SumDictionaryKeys(self, dict):
+        num = 0
+        for value in dict:
+            num += dict[value]
+        return num
 
     def ShowProgress(self, topic_name):
         #progress pane modification
@@ -62,15 +69,14 @@ class Progress():
         green_label = tk.Label(progress_pane, text = f"Very Confident = {progress_dictionary['Green']}", font = Fonts().progress_font)
         green_label.grid(column = 0, row = 5, sticky = "w", padx = 10, pady = 7)
 
-        percentage = int(progress_dictionary['Green'] / SumDictionaryKeys(progress_dictionary) * 100)
-        percentage_font = tk.font.Font(family = "Helvetica", size = 36)
+        percentage = int(progress_dictionary['Green'] / self.SumDictionaryKeys(progress_dictionary) * 100)
         percentage = tk.Label(progress_pane, text = f"{percentage}%",font = Fonts().percentage_font)
         percentage.grid(column = 2, row = 3, rowspan = 2)
 
 
         exit_button = tk.Button(progress_pane, text = "Exit", command = progress_pane.destroy)
         exit_button.grid(column = 3, row = 6, sticky = "se")
-        Toplevel.mainloop(root)
+        Toplevel.mainloop(self.root)
 
     def FormatProgressScreen(self):
 

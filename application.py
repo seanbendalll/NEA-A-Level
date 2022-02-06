@@ -10,14 +10,34 @@ from progress import Progress
 from fonts import Fonts
 
 root = tk.Tk()
-root.title("ALCA - A Level Computer Science Application")
-root.resizable(False, False)
-root_size_x = 1300
-root_size_y = 750
-root.geometry("{}x{}".format(root_size_x, root_size_y))
 
-data_model = Model()
 
+class Application():
+    def __init__(self):
+        self.data_model = Model()
+        self.root = RootInitialisation()
+
+    def ApplicationStartUp(self):
+        home_frame.pack(fill = "both") #pack the frames but grid the stuff within the frames
+        root.mainloop()
+
+    def RootInitialisation(self):
+        root = tk.Tk()
+        root.title("ALCA - A Level Computer Science Application")
+        root.resizable(False, False)
+        root_size_x = 1300
+        root_size_y = 750
+        root.geometry("{}x{}".format(root_size_x, root_size_y))
+        return root
+
+
+
+
+progress_frame_class = Progress(root)
+progress_frame = progress_frame_class.progress_frame
+
+
+#TEST CODE
 def ShowAnswer():
     question_frame.grid_forget()
     answer_frame.grid(column = 0, row = 6, columnspan = 4)
@@ -39,7 +59,7 @@ def ChangeToTestFrame():
     progress_frame.forget()
     q = PriorityQueue("1 Fundamentals of Programming")
     print(q.queue)
-    ShowQuestion()
+    #ShowQuestion()
 
 def ChangeToLearnFrame():
     learn_frame.pack(fill = "both")
@@ -52,7 +72,7 @@ def ChangeToProgressFrame():
     home_frame.forget()
     learn_frame.forget()
     test_frame.forget()
-    FormatProgressScreen()
+    progress_frame_class.FormatProgressScreen()
 
 title_font = tk.font.Font(family = "Helvetica", size = 36, weight = "bold")
 topic_font = tk.font.Font(family = "Helvetica", size = 28)
@@ -62,8 +82,6 @@ test_frame = tk.Frame(root, height = 500, width = 5)
 learn_frame = tk.Frame(root, height = 500, width = 5)
 
 #progress_frame = tk.Frame(root, height = 500, width = 5)
-progress_frame_class = Progress(root)
-progress_frame = progress_frame_class.progress_frame
 
 #MARK - HOME SCREEN CODE
 greeting_for_home = tk.Label(home_frame, text="Welcome to home screen", height = 2, font = Fonts().title_font)
@@ -182,16 +200,19 @@ learn_screen_button_p.grid(column = 2, row = 1)
 progress_screen_button_p.grid(column = 3, row = 1)
 
 """
+"""
 def ResetQuestions():
     confirmation = messagebox.askquestion("Warning", "Are you sure?")
     if confirmation == 'yes':
         data_model.ResetQuestions()
-
+    """
+"""
 def SumDictionaryKeys(dict):
     num = 0
     for value in dict:
         num += dict[value]
     return num
+"""
 """
 def showProgress(topic_name):
     #progress pane modification
@@ -236,7 +257,7 @@ def showProgress(topic_name):
 def GoToTopic(topic_name):
 
     print("")
-
+"""
 def FormatProgressScreen():
 
     topic_names = data_model.GetTopics()
@@ -255,6 +276,7 @@ def FormatProgressScreen():
         row +=1
     reset_button = tk.Button(progress_frame, text = "Reset all to very unconfident", command = ResetQuestions)
     reset_button.grid(column = 0, columnspan = 4, row = 20, pady = 10)
+"""
 #main startup
 home_frame.pack(fill = "both") #pack the frames but grid the stuff within the frames
 root.mainloop()
