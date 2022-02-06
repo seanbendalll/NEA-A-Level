@@ -18,8 +18,8 @@ class Model():
             password = file.readline()
         return password
 
-    def GetTopicID(self, subject_name):
-        topicIDQuery = f"SELECT TopicID FROM topics WHERE TopicTitle = '{subject_name}'"
+    def GetTopicID(self, topic_title):
+        topicIDQuery = f"SELECT TopicID FROM topics WHERE TopicTitle = '{topic_title}'"
         self.c.execute(topicIDQuery)
         topic_id = -1
         try:
@@ -28,6 +28,15 @@ class Model():
             print("The topic name could not be found")
         return topic_id
 
+    def GetAllQuestions(self, topic_id):
+        questions = []
+        question_query = f"SELECT * FROM questions WHERE TopicID = '{topic_id}'"
+        self.c.execute(question_query)
+        for question in self.c:
+            questions.append(question)
+        return questions
+
+        return questions
     def GetImageQuestions(self):
         image_urls = []
         image_titles = []
@@ -41,7 +50,6 @@ class Model():
             image_titles.append(imagetitle[0])
         image_questions = {}
         for i in range(1, len(image_urls)):
-
             image_questions[image_titles[i -1]] = image_urls[i -1]
         return image_questions
 

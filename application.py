@@ -1,10 +1,13 @@
 import tkinter as tk
 from tkinter import ttk
-from tkinter import font, messagebox
+from tkinter import messagebox
 from tkinter import *
 from model import Model
 from functools import partial
 from PIL import ImageTk, Image
+from PriorityQueue import PriorityQueue
+from progress import Progress
+from fonts import Fonts
 
 root = tk.Tk()
 root.title("ALCA - A Level Computer Science Application")
@@ -15,34 +18,36 @@ root.geometry("{}x{}".format(root_size_x, root_size_y))
 
 data_model = Model()
 
-def showAnswer():
+def ShowAnswer():
     question_frame.grid_forget()
     answer_frame.grid(column = 0, row = 6, columnspan = 4)
 
-def showQuestion():
+def ShowQuestion():
     answer_frame.grid_forget()
     question_frame.grid(column = 0, row = 6, columnspan = 4)
 
-def change_to_home_frame():
+def ChangeToHomeFrame():
     home_frame.pack(fill = "both")
     test_frame.forget()
     learn_frame.forget()
     progress_frame.forget()
 
-def change_to_test_frame():
+def ChangeToTestFrame():
     test_frame.pack(fill = "both")
     home_frame.forget()
     learn_frame.forget()
     progress_frame.forget()
-    showQuestion()
+    q = PriorityQueue("1 Fundamentals of Programming")
+    print(q.queue)
+    ShowQuestion()
 
-def change_to_learn_frame():
+def ChangeToLearnFrame():
     learn_frame.pack(fill = "both")
     test_frame.forget()
     home_frame.forget()
     progress_frame.forget()
 
-def change_to_progress_frame():
+def ChangeToProgressFrame():
     progress_frame.pack(fill = "both")
     home_frame.forget()
     learn_frame.forget()
@@ -51,19 +56,21 @@ def change_to_progress_frame():
 
 title_font = tk.font.Font(family = "Helvetica", size = 36, weight = "bold")
 topic_font = tk.font.Font(family = "Helvetica", size = 28)
-
 #using frames to give a multiple view application
 home_frame = tk.Frame(root, height = 500, width = 5)
 test_frame = tk.Frame(root, height = 500, width = 5)
 learn_frame = tk.Frame(root, height = 500, width = 5)
-progress_frame = tk.Frame(root, height = 500, width = 5)
+
+#progress_frame = tk.Frame(root, height = 500, width = 5)
+progress_frame_class = Progress(root)
+progress_frame = progress_frame_class.progress_frame
 
 #MARK - HOME SCREEN CODE
-greeting_for_home = tk.Label(home_frame, text="Welcome to home screen", height = 2, font = title_font)
-home_screen_button_h = tk.Button(home_frame, text = "HOME", width = 32, height = 2, command = change_to_home_frame)
-test_screen_button_h = tk.Button(home_frame, text = "TEST", width = 32, height = 2, command = change_to_test_frame)
-learn_screen_button_h = tk.Button(home_frame, text = "LEARN", width = 32, height = 2, command = change_to_learn_frame)
-progress_screen_button_h = tk.Button(home_frame, text = "PROGRESS", width = 32, height = 2, command = change_to_progress_frame)
+greeting_for_home = tk.Label(home_frame, text="Welcome to home screen", height = 2, font = Fonts().title_font)
+home_screen_button_h = tk.Button(home_frame, text = "HOME", width = 32, height = 2, command = ChangeToHomeFrame)
+test_screen_button_h = tk.Button(home_frame, text = "TEST", width = 32, height = 2, command = ChangeToTestFrame)
+learn_screen_button_h = tk.Button(home_frame, text = "LEARN", width = 32, height = 2, command = ChangeToLearnFrame)
+progress_screen_button_h = tk.Button(home_frame, text = "PROGRESS", width = 32, height = 2, command = ChangeToProgressFrame)
 
 greeting_for_home.grid(column = 0, row = 0, columnspan = 4)
 home_screen_button_h.grid(column = 0, row = 1)
@@ -74,11 +81,11 @@ separator = ttk.Separator(home_frame, orient = "horizontal")
 separator.grid(column = 0, row = 4, columnspan = 4, sticky = "ew", pady = 10)
 
 #MARK - TEST SCREEN CODE
-greeting_for_test = tk.Label(test_frame, text="TEST", height = 2, font = title_font)
-home_screen_button_t = tk.Button(test_frame, text = "HOME", width = 32, height = 2, command = change_to_home_frame)
-test_screen_button_t = tk.Button(test_frame, text = "TEST", width = 32, height = 2, command = change_to_test_frame)
-learn_screen_button_t = tk.Button(test_frame, text = "LEARN", width = 32, height = 2, command = change_to_learn_frame)
-progress_screen_button_t = tk.Button(test_frame, text = "PROGRESS", width = 32, height = 2, command = change_to_progress_frame)
+greeting_for_test = tk.Label(test_frame, text="TEST", height = 2, font = Fonts().title_font)
+home_screen_button_t = tk.Button(test_frame, text = "HOME", width = 32, height = 2, command = ChangeToHomeFrame)
+test_screen_button_t = tk.Button(test_frame, text = "TEST", width = 32, height = 2, command = ChangeToTestFrame)
+learn_screen_button_t = tk.Button(test_frame, text = "LEARN", width = 32, height = 2, command = ChangeToLearnFrame)
+progress_screen_button_t = tk.Button(test_frame, text = "PROGRESS", width = 32, height = 2, command = ChangeToProgressFrame)
 
 greeting_for_test.grid(column = 0, row = 0, columnspan = 4)
 home_screen_button_t.grid(column = 0, row = 1)
@@ -87,14 +94,14 @@ learn_screen_button_t.grid(column = 2, row = 1)
 progress_screen_button_t.grid(column = 3, row = 1)
 separator = ttk.Separator(test_frame, orient = "horizontal")
 separator.grid(column = 0, row = 4, columnspan = 4, sticky = "ew", pady = 10)
-topic_label = tk.Label(test_frame, text = "TOPIC NAME HERE" ,height = 1, font = topic_font)
+topic_label = tk.Label(test_frame, text = "TOPIC NAME HERE" ,height = 1, font = Fonts().topic_font)
 topic_label.grid(column = 0, row = 5, columnspan = 4)
 
 #CODE FOR WHEN ANSWER IS NOT SHOWN
 question_frame = tk.Frame(test_frame)
 question_label = tk.Label(question_frame,width = 75, height = 20, wraplength = 500, text = "qweuquefhysdfgysgyfugyuyyyugyuyuggyugyugyugyugyuuiawdhfuiashdfuiahsdfuihaisdufhasdfshadfjihasdjihasduifhhuiasdffhuiasdfihuasdfhuiasdf")
 question_label.grid(column = 0, row = 6, columnspan = 4)
-show_answer_button = tk.Button(question_frame, text = "Show Answer", command = showAnswer)
+show_answer_button = tk.Button(question_frame, text = "Show Answer", command = ShowAnswer)
 show_answer_button.grid(column = 0, row = 7, columnspan = 4)
 question_frame.grid(column = 0, row = 6, columnspan = 4)
 
@@ -103,24 +110,27 @@ question_frame.grid(column = 0, row = 6, columnspan = 4)
 #CODE FOR WHEN ANSWER IS SHOWN
 answer_frame = tk.Frame(test_frame)
 
-photo_canvas = Canvas(answer_frame, width = 1200, height = 400)
-photo_canvas.grid(column = 0, row = 6, columnspan = 4)
-img = (Image.open('images/Class A.png'))
-img_for_dimensions = PhotoImage(file = 'images/Class A.png')
-img_width = img_for_dimensions.width()
-img_height = img_for_dimensions.height()
-img_hw_ratio = int(img_width / img_height)
-print("width is ", img_width, " and image height is ", img_height)
 
+def DisplayImage(image_name):
 
-if img_height < 300:
-    resized_image = img.resize((1000, 1000 * img_hw_ratio), Image.ANTIALIAS)
-    new_image = ImageTk.PhotoImage(resized_image)
-    photo_canvas.create_image(100,10, anchor = NW, image = new_image)
-elif img_height > 300:
-    resized_image = img.resize((350 / img_hw_ratio, 350), Image.ANTIALIAS)
-    new_image = ImageTk.PhotoImage(resized_image)
-    photo_canvas.create_image(100,10, anchor = NW, image = new_image)
+    photo_canvas = Canvas(answer_frame, width = 1200, height = 400)
+    photo_canvas.grid(column = 0, row = 6, columnspan = 4)
+    img = (Image.open(f'images/{image_name}.png'))
+    img_for_dimensions = PhotoImage(file = f'images/{image_name}.png')
+    img_width = img_for_dimensions.width()
+    img_height = img_for_dimensions.height()
+    img_hw_ratio = round(img_width / img_height)
+    print("width is ", img_width, " and image height is ", img_height)
+    print(img_hw_ratio)
+
+    if img_height < 300:
+        resized_image = img.resize((1000, int(1000 / img_hw_ratio)), Image.ANTIALIAS)
+        new_image = ImageTk.PhotoImage(resized_image)
+        photo_canvas.create_image(100,10, anchor = NW, image = new_image)
+    elif img_height > 300:
+        resized_image = img.resize((int(350 * img_hw_ratio), 350), Image.ANTIALIAS)
+        new_image = ImageTk.PhotoImage(resized_image)
+        photo_canvas.create_image(425,10, anchor = NW, image = new_image)
 
 
 green_button = tk.Button(answer_frame, bg = "green", text = "Very Confident", height = 5, width = 15)
@@ -138,11 +148,11 @@ skip_button.grid(column = 0, row = 8, columnspan = 4, pady = 10)
 
 
 #MARK - LEARN SCREEN CODE
-greeting_for_learn = tk.Label(learn_frame, text="Welcome to learn screen", height = 2, font = title_font)
-home_screen_button_l = tk.Button(learn_frame, text = "HOME", width = 32, height = 2, command = change_to_home_frame)
-test_screen_button_l = tk.Button(learn_frame, text = "TEST", width = 32, height = 2, command = change_to_test_frame)
-learn_screen_button_l = tk.Button(learn_frame, text = "LEARN", width = 32, height = 2, command = change_to_learn_frame)
-progress_screen_button_l = tk.Button(learn_frame, text = "PROGRESS", width = 32, height = 2, command = change_to_progress_frame)
+greeting_for_learn = tk.Label(learn_frame, text="Welcome to learn screen", height = 2, font = Fonts().title_font)
+home_screen_button_l = tk.Button(learn_frame, text = "HOME", width = 32, height = 2, command = ChangeToHomeFrame)
+test_screen_button_l = tk.Button(learn_frame, text = "TEST", width = 32, height = 2, command = ChangeToTestFrame)
+learn_screen_button_l = tk.Button(learn_frame, text = "LEARN", width = 32, height = 2, command = ChangeToLearnFrame)
+progress_screen_button_l = tk.Button(learn_frame, text = "PROGRESS", width = 32, height = 2, command = ChangeToProgressFrame)
 
 separator = ttk.Separator(learn_frame, orient = "horizontal")
 separator.grid(column = 0, row = 4, columnspan = 4, sticky = "ew", pady = 10)
@@ -156,11 +166,12 @@ progress_screen_button_l.grid(column = 3, row = 1)
 
 
 #MARK - PROGRESS SCREEN CODE
+"""
 greeting_for_progress = tk.Label(progress_frame, text="Welcome to progress screen", height = 2, font = title_font)
-home_screen_button_p = tk.Button(progress_frame, text = "HOME", width = 32, height = 2, command = change_to_home_frame)
-test_screen_button_p = tk.Button(progress_frame, text = "TEST", width = 32, height = 2, command = change_to_test_frame)
-learn_screen_button_p = tk.Button(progress_frame, text = "LEARN", width = 32, height = 2, command = change_to_learn_frame)
-progress_screen_button_p = tk.Button(progress_frame, text = "PROGRESS", width = 32, height = 2, command = change_to_progress_frame)
+home_screen_button_p = tk.Button(progress_frame, text = "HOME", width = 32, height = 2, command = ChangeToHomeFrame)
+test_screen_button_p = tk.Button(progress_frame, text = "TEST", width = 32, height = 2, command = ChangeToTestFrame)
+learn_screen_button_p = tk.Button(progress_frame, text = "LEARN", width = 32, height = 2, command = ChangeToLearnFrame)
+progress_screen_button_p = tk.Button(progress_frame, text = "PROGRESS", width = 32, height = 2, command = ChangeToProgressFrame)
 separator = ttk.Separator(progress_frame, orient = "horizontal")
 separator.grid(column = 0, row = 4, columnspan = 4, sticky = "ew", pady = 10)
 
@@ -170,6 +181,7 @@ test_screen_button_p.grid(column = 1, row = 1)
 learn_screen_button_p.grid(column = 2, row = 1)
 progress_screen_button_p.grid(column = 3, row = 1)
 
+"""
 def ResetQuestions():
     confirmation = messagebox.askquestion("Warning", "Are you sure?")
     if confirmation == 'yes':
@@ -180,7 +192,7 @@ def SumDictionaryKeys(dict):
     for value in dict:
         num += dict[value]
     return num
-
+"""
 def showProgress(topic_name):
     #progress pane modification
     progress_pane = Toplevel()
@@ -193,7 +205,7 @@ def showProgress(topic_name):
     #adds the title of the progress tab
     progress_title_font = tk.font.Font(family = "Helvetica", size = 16, weight = "bold")
     progress_font = tk.font.Font(family = "Helvetica", size = 14)
-    progress_label = tk.Label(progress_pane, text = f"Progress for - {topic_name}.", height =2,width = 50, font = progress_title_font, anchor = "w")
+    progress_label = tk.Label(progress_pane, text = f"Progress for - {topic_name}.", height =2,width = 50, font = Fonts().progress_title_font, anchor = "w")
     progress_label.grid(column = 0, row = 0, sticky = "ew", padx = 10, columnspan = 4)
 
     #add a divider below the progress icon
@@ -201,18 +213,18 @@ def showProgress(topic_name):
     separator.grid(column = 0, row = 1, columnspan = 4, sticky = "ew", padx = 10)
 
     progress_dictionary = data_model.GetProgress(topic_name)
-    red_label = tk.Label(progress_pane, text = f"Very Unconfident = {progress_dictionary['Red']}", font = progress_font)
+    red_label = tk.Label(progress_pane, text = f"Very Unconfident = {progress_dictionary['Red']}", font = Fonts().progress_font)
     red_label.grid(column = 0, row = 2, sticky = "w", padx = 10, pady = 7)
-    orange_label = tk.Label(progress_pane, text = f"Unconfident = {progress_dictionary['Orange']}", font = progress_font)
+    orange_label = tk.Label(progress_pane, text = f"Unconfident = {progress_dictionary['Orange']}", font = Fonts().progress_font)
     orange_label.grid(column = 0, row = 3, sticky = "w", padx = 10, pady = 7)
-    yellow_label = tk.Label(progress_pane, text = f"Confident = {progress_dictionary['Yellow']}", font = progress_font)
+    yellow_label = tk.Label(progress_pane, text = f"Confident = {progress_dictionary['Yellow']}", font = Fonts().progress_font)
     yellow_label.grid(column = 0, row = 4, sticky = "w", padx = 10, pady = 7)
-    green_label = tk.Label(progress_pane, text = f"Very Confident = {progress_dictionary['Green']}", font = progress_font)
+    green_label = tk.Label(progress_pane, text = f"Very Confident = {progress_dictionary['Green']}", font = Fonts().progress_font)
     green_label.grid(column = 0, row = 5, sticky = "w", padx = 10, pady = 7)
 
     percentage = int(progress_dictionary['Green'] / SumDictionaryKeys(progress_dictionary) * 100)
     percentage_font = tk.font.Font(family = "Helvetica", size = 36)
-    percentage = tk.Label(progress_pane, text = f"{percentage}%",font = percentage_font)
+    percentage = tk.Label(progress_pane, text = f"{percentage}%",font = Fonts().percentage_font)
     percentage.grid(column = 2, row = 3, rowspan = 2)
 
 
@@ -220,6 +232,7 @@ def showProgress(topic_name):
     exit_button.grid(column = 3, row = 6, sticky = "se")
     Toplevel.mainloop(root)
 
+"""
 def GoToTopic(topic_name):
 
     print("")
