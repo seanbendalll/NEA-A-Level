@@ -46,3 +46,7 @@
 - data model completed
 - can start working on implementation within the app
 - need to clean up the code.
+
+7.2.22:
+- need to sort out reset questions
+- 

@@ -1,6 +1,7 @@
 #a file to implement a priority queue based on the questions in a topic
 from model import Model
 import random
+from block import Question
 
 class PriorityQueue():
 
@@ -34,6 +35,8 @@ class PriorityQueue():
         priority_queue = red_questions + orange_questions + yellow_questions + green_questions
         return priority_queue
 
-    def DequeueItem(self, question):
+    def Dequeue(self):
         #dequeues a question from the front of a list
-        print("")
+        item = self.queue[0]
+        question = Question("", item[1], item[2], item[3])
+        return question

@@ -18,6 +18,15 @@ class Model():
             password = file.readline()
         return password
 
+    def GetTopicTitle(self, topic_id):
+        topic_title_query = f"SELECT TopicTitle FROM topics WHERE TopicID = {topic_id}"
+        self.c.execute(topic_title_query)
+        try:
+            topic_title = self.c.fetchall()[0][0]
+        except IndexError:
+            print("The topic name could not be found")
+        return topic_title
+
     def GetTopicID(self, topic_title):
         topicIDQuery = f"SELECT TopicID FROM topics WHERE TopicTitle = '{topic_title}'"
         self.c.execute(topicIDQuery)
@@ -25,7 +34,7 @@ class Model():
         try:
             topic_id = self.c.fetchall()[0][0]
         except IndexError:
-            print("The topic name could not be found")
+            print("The topic ID could not be found")
         return topic_id
 
     def GetAllQuestions(self, topic_id):
@@ -62,12 +71,38 @@ class Model():
             topics.append(topic[0])
         return topics
 
-    def ResetQuestions(self):
-        reset_query = """
-        UPDATE questions
-        SET Confidence = 'red'
-        """
-        self.c.execute(reset_query)
+    def ResetQuestions(self, topic_name):
+        if topic_name == "all":
+
+            reset_query = """
+            UPDATE questions
+            SET Confidence = 'red'
+            """
+            self.c.execute(reset_query)
+            self.database.commit()
+        else:
+            topic_id = self.GetTopicID(topic_name)
+            reset_query = f"""
+            UPDATE questions
+            SET Confidence = 'red'
+            WHERE TopicID = {topic_id}
+            """
+            try:
+                self.c.execute(reset_query)
+            except:
+                print("Could not be found - invalid name.")
+            self.database.commit()
+
+    def UpdateQuestion(self, question_text, new_confidence):
+        question_id_query = f"SELECT QuestionID FROM questions WHERE QuestionText = '{question_text}'"
+        self.c.execute(question_id_query)
+        try:
+            question_id = self.c.fetchall()[0][0]
+        except:
+            print("Question not found")
+        update_statement = f"UPDATE questions SET Confidence = '{new_confidence}' WHERE QuestionID = {question_id}"
+        self.c.execute(update_statement)
+        self.database.commit()
 
     def GetProgress(self, subject_name):
         #selects the questions
