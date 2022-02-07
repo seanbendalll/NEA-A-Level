@@ -7,22 +7,23 @@ from functools import partial
 from PIL import ImageTk, Image
 from PriorityQueue import PriorityQueue
 from fonts import Fonts
+import application
 
 class Progress():
 
     def __init__(self, root):
         self.root = root
-        self.progress_frame = tk.Frame(root, height = 500, width = 5)
         self.data_model = Model()
-        self.InitialiseBaseFrame(self.root)
+        self.progress_frame = tk.Frame(self.root, height = 500, width = 5)
+        self.InitialiseBaseFrame()
 
 
-    def InitialiseBaseFrame(self, root):
+    def InitialiseBaseFrame(self):
         greeting_for_progress = tk.Label(self.progress_frame, text="Welcome to progress screen", height = 2, font = Fonts().title_font)
-        home_screen_button_p = tk.Button(self.progress_frame, text = "HOME", width = 32, height = 2, command = ChangeToHomeFrame)
-        test_screen_button_p = tk.Button(self.progress_frame, text = "TEST", width = 32, height = 2, command = ChangeToTestFrame)
-        learn_screen_button_p = tk.Button(self.progress_frame, text = "LEARN", width = 32, height = 2, command = ChangeToLearnFrame)
-        progress_screen_button_p = tk.Button(self.progress_frame, text = "PROGRESS", width = 32, height = 2, command = ChangeToProgressFrame)
+        home_screen_button_p = tk.Button(self.progress_frame, text = "HOME", width = 32, height = 2)
+        test_screen_button_p = tk.Button(self.progress_frame, text = "TEST", width = 32, height = 2)
+        learn_screen_button_p = tk.Button(self.progress_frame, text = "LEARN", width = 32, height = 2)
+        progress_screen_button_p = tk.Button(self.progress_frame, text = "PROGRESS", width = 32, height = 2)
         separator = ttk.Separator(self.progress_frame, orient = "horizontal")
         separator.grid(column = 0, row = 4, columnspan = 4, sticky = "ew", pady = 10)
 

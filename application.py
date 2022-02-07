@@ -15,24 +15,8 @@ class Progress():
     def __init__(self, root):
         self.root = root
         self.data_model = Model()
-        self.progress_frame = tk.Frame(self.root, height = 500, width = 5)
-        self.InitialiseBaseFrame()
-
-
-    def InitialiseBaseFrame(self):
-        greeting_for_progress = tk.Label(self.progress_frame, text="Welcome to progress screen", height = 2, font = Fonts().title_font)
-        home_screen_button_p = tk.Button(self.progress_frame, text = "HOME", width = 32, height = 2)
-        test_screen_button_p = tk.Button(self.progress_frame, text = "TEST", width = 32, height = 2)
-        learn_screen_button_p = tk.Button(self.progress_frame, text = "LEARN", width = 32, height = 2)
-        progress_screen_button_p = tk.Button(self.progress_frame, text = "PROGRESS", width = 32, height = 2)
-        separator = ttk.Separator(self.progress_frame, orient = "horizontal")
-        separator.grid(column = 0, row = 4, columnspan = 4, sticky = "ew", pady = 10)
-
-        greeting_for_progress.grid(column = 0, row = 0, columnspan = 4)
-        home_screen_button_p.grid(column = 0, row = 1)
-        test_screen_button_p.grid(column = 1, row = 1)
-        learn_screen_button_p.grid(column = 2, row = 1)
-        progress_screen_button_p.grid(column = 3, row = 1)
+        self.progress_frame = tk.Frame(self.root)
+        #self.InitialiseBaseFrame()
 
     def ResetQuestions(self):
         confirmation = tk.messagebox.askquestion("Warning", "Are you sure?")
@@ -104,133 +88,96 @@ class Test():
     def __init__(self, root):
         self.root = root
         self.data_model = Model()
-        self.test_frame = tk.Frame(self.root, height = 500, width = 5)
-        self.InitialiseBaseFrame()
+        self.test_frame = tk.Frame(self.root)
+        #self.InitialiseBaseFrame()
 
-    def InitialiseBaseFrame(self):
-        greeting_for_test = tk.Label(self.test_frame, text="TEST", height = 2, font = Fonts().title_font)
-        home_screen_button_t = tk.Button(self.test_frame, text = "HOME", width = 32, height = 2)
-        test_screen_button_t = tk.Button(self.test_frame, text = "TEST", width = 32, height = 2)
-        learn_screen_button_t = tk.Button(self.test_frame, text = "LEARN", width = 32, height = 2)
-        progress_screen_button_t = tk.Button(self.test_frame, text = "PROGRESS", width = 32, height = 2)
-
-        greeting_for_test.grid(column = 0, row = 0, columnspan = 4)
-        home_screen_button_t.grid(column = 0, row = 1)
-        test_screen_button_t.grid(column = 1, row = 1)
-        learn_screen_button_t.grid(column = 2, row = 1)
-        progress_screen_button_t.grid(column = 3, row = 1)
-        separator = ttk.Separator(self.test_frame, orient = "horizontal")
-        separator.grid(column = 0, row = 4, columnspan = 4, sticky = "ew", pady = 10)
-        topic_label = tk.Label(self.test_frame, text = "TOPIC NAME HERE" ,height = 1, font = Fonts().topic_font)
-        topic_label.grid(column = 0, row = 5, columnspan = 4)
 class Learn():
 
     def __init__(self, root):
         self.root = root
         self.data_model = Model()
-        self.learn_frame = tk.Frame(self.root, height = 500, width = 5)
-        self.InitialiseBaseFrame()
-
-    def InitialiseBaseFrame(self):
-        greeting_for_learn = tk.Label(self.learn_frame, text="Welcome to learn screen", height = 2, font = Fonts().title_font)
-        home_screen_button_l = tk.Button(self.learn_frame, text = "HOME", width = 32, height = 2)
-        test_screen_button_l = tk.Button(self.learn_frame, text = "TEST", width = 32, height = 2)
-        learn_screen_button_l = tk.Button(self.learn_frame, text = "LEARN", width = 32, height = 2)
-        progress_screen_button_l = tk.Button(self.learn_frame, text = "PROGRESS", width = 32, height = 2)
-
-        separator = ttk.Separator(self.learn_frame, orient = "horizontal")
-        separator.grid(column = 0, row = 4, columnspan = 4, sticky = "ew", pady = 10)
-        greeting_for_learn.grid(column = 0, row = 0, columnspan = 4)
-        home_screen_button_l.grid(column = 0, row = 1)
-        test_screen_button_l.grid(column = 1, row = 1)
-        learn_screen_button_l.grid(column = 2, row = 1)
-        progress_screen_button_l.grid(column = 3, row = 1)
+        self.learn_frame = tk.Frame(self.root)
+        #self.InitialiseBaseFrame()
 
 class Home():
 
     def __init__(self, root):
         self.root = root
         self.data_model = Model()
-        self.home_frame = tk.Frame(self.root, height = 500, width = 5)
-        self.InitialiseBaseFrame()
+        self.home_frame = tk.Frame(self.root)
 
-    def InitialiseBaseFrame(self):
-        greeting_for_home = tk.Label(self.home_frame, text="Welcome to home screen", height = 2, font = Fonts().title_font)
-        home_screen_button_h = tk.Button(self.home_frame, text = "HOME", width = 32, height = 2)
-        test_screen_button_h = tk.Button(self.home_frame, text = "TEST", width = 32, height = 2)
-        learn_screen_button_h = tk.Button(self.home_frame, text = "LEARN", width = 32, height = 2)
-        progress_screen_button_h = tk.Button(self.home_frame, text = "PROGRESS", width = 32, height = 2)
+def RootInitialisation():
+    root = tk.Tk()
+    root.title("ALCA - A Level Computer Science Application")
+    root.resizable(False, False)
+    root_size_x = 1300
+    root_size_y = 750
+    root.geometry("{}x{}".format(root_size_x, root_size_y))
+    return root
 
-        greeting_for_home.grid(column = 0, row = 0, columnspan = 4)
-        home_screen_button_h.grid(column = 0, row = 1)
-        test_screen_button_h.grid(column = 1, row = 1)
-        learn_screen_button_h.grid(column = 2, row = 1)
-        progress_screen_button_h.grid(column = 3, row = 1)
-        separator = ttk.Separator(self.home_frame, orient = "horizontal")
-        separator.grid(column = 0, row = 4, columnspan = 4, sticky = "ew", pady = 10)
+def ChangeToHomeFrame(label):
+    home_frame.grid(column = 0, row = 5, columnspan = 4)
+    test_frame.grid_forget()
+    learn_frame.grid_forget()
+    progress_frame.grid_forget()
+    UpdateLabel("home", label)
+
+def ChangeToTestFrame(label):
+    test_frame.grid(column = 0, row = 5, columnspan = 4)
+    home_frame.grid_forget()
+    learn_frame.grid_forget()
+    progress_frame.grid_forget()
+    UpdateLabel("test", label)
+
+def ChangeToLearnFrame(label):
+    learn_frame.grid(column = 0, row = 5, columnspan = 4)
+    test_frame.grid_forget()
+    home_frame.grid_forget()
+    progress_frame.grid_forget()
+    UpdateLabel("learn", label)
+
+def ChangeToProgressFrame(label):
+    progress_frame.grid(column = 0, row = 5, columnspan = 4)
+    home_frame.grid_forget()
+    learn_frame.grid_forget()
+    test_frame.grid_forget()
+    progress.FormatProgressScreen()
+    UpdateLabel("progress", label)
+
+def InitialiseMenu(root, greeting):
+    home_screen_button_h = tk.Button(root, text = "HOME", width = 32, height = 2, command = partial(ChangeToHomeFrame, greeting))
+    test_screen_button_h = tk.Button(root, text = "TEST", width = 32, height = 2, command = partial(ChangeToTestFrame, greeting))
+    learn_screen_button_h = tk.Button(root, text = "LEARN", width = 32, height = 2, command = partial(ChangeToLearnFrame, greeting))
+    progress_screen_button_h = tk.Button(root, text = "PROGRESS", width = 32, height = 2, command = partial(ChangeToProgressFrame, greeting))
 
 
-class Application:
-    def __init__(self):
-        self.data_model = Model()
-        self.root = self.RootInitialisation()
-        self.test = Test(self.root)
-        self.test_frame = self.test.test_frame
-        self.home = Home(self.root)
-        self.home_frame = self.home.home_frame
-        self.progress = Progress(self.root)
-        self.progress_frame = self.progress.progress_frame
-        self.learn = Learn(self.root)
-        self.learn_frame = self.learn.learn_frame
-        self.ApplicationStartUp()
+    home_screen_button_h.grid(column = 0, row = 1)
+    test_screen_button_h.grid(column = 1, row = 1)
+    learn_screen_button_h.grid(column = 2, row = 1)
+    progress_screen_button_h.grid(column = 3, row = 1)
+    separator = ttk.Separator(root, orient = "horizontal")
+    separator.grid(column = 0, row = 4, columnspan = 4, sticky = "ew", pady = 10)
 
-    def ApplicationStartUp(self):
-        """
-        home_screen_button_t = tk.Button(self.root, text = "HOME", width = 32, height = 2, command = self.ChangeToHomeFrame)
-        test_screen_button_t = tk.Button(self.root, text = "TEST", width = 32, height = 2, command = self.ChangeToTestFrame)
-        learn_screen_button_t = tk.Button(self.root, text = "LEARN", width = 32, height = 2, command = self.ChangeToLearnFrame)
-        progress_screen_button_t = tk.Button(self.root, text = "PROGRESS", width = 32, height = 2, command = self.ChangeToProgressFrame)
-        """
-        self.home_frame.pack(fill = "both") #pack the frames but grid the stuff within the frames
-        self.root.mainloop()
 
-    def RootInitialisation(self):
-        root = tk.Tk()
-        root.title("ALCA - A Level Computer Science Application")
-        root.resizable(False, False)
-        root_size_x = 1300
-        root_size_y = 750
-        root.geometry("{}x{}".format(root_size_x, root_size_y))
-        return root
+def UpdateLabel(frame_name, label):
+    label['text'] = f"Welcome to the {frame_name} screen"
 
-    def ChangeToHomeFrame(self):
-        self.home_frame.pack(fill = "both")
-        self.test_frame.forget()
-        self.learn_frame.forget()
-        self.progress_frame.forget()
 
-    def ChangeToTestFrame(self):
-        self.test_frame.pack(fill = "both")
-        self.home_frame.forget()
-        self.learn_frame.forget()
-        self.progress_frame.forget()
-        q = PriorityQueue("1 Fundamentals of Programming")
-        print(q.queue)
-        #ShowQuestion()
-
-    def ChangeToLearnFrame(self):
-        self.learn_frame.pack(fill = "both")
-        self.test_frame.forget()
-        self.home_frame.forget()
-        self.progress_frame.forget()
-
-    def ChangeToProgressFrame(self):
-        self.progress_frame.pack(fill = "both")
-        self.home_frame.forget()
-        self.learn_frame.forget()
-        self.test_frame.forget()
-        self.progress.FormatProgressScreen()
-
+data_model = Model()
+root = RootInitialisation()
+test = Test(root)
+test_frame = test.test_frame
+home = Home(root)
+home_frame = home.home_frame
+progress = Progress(root)
+progress_frame = progress.progress_frame
+learn = Learn(root)
+learn_frame = learn.learn_frame
+greeting = tk.Label(root, text=f"Welcome to home Screen", height = 2, font = Fonts().title_font)
+greeting.grid(column = 0, row = 0, columnspan = 4)
+InitialiseMenu(root, greeting)
+ChangeToHomeFrame(greeting)
+root.mainloop()
 #TEST CODE
 """
 def ShowAnswer():
@@ -241,61 +188,10 @@ def ShowQuestion():
     answer_frame.grid_forget()
     question_frame.grid(column = 0, row = 6, columnspan = 4)
 """
-"""
-def ChangeToHomeFrame():
-    home_frame.pack(fill = "both")
-    test_frame.forget()
-    learn_frame.forget()
-    progress_frame.forget()
-
-def ChangeToTestFrame():
-    test_frame.pack(fill = "both")
-    home_frame.forget()
-    learn_frame.forget()
-    progress_frame.forget()
-    q = PriorityQueue("1 Fundamentals of Programming")
-    print(q.queue)
-    #ShowQuestion()
-
-def ChangeToLearnFrame():
-    learn_frame.pack(fill = "both")
-    test_frame.forget()
-    home_frame.forget()
-    progress_frame.forget()
-
-def ChangeToProgressFrame():
-    progress_frame.pack(fill = "both")
-    home_frame.forget()
-    learn_frame.forget()
-    test_frame.forget()
-    progress_frame_class.FormatProgressScreen()
-"""
-#using frames to give a multiple view application
-"""
-home_frame = tk.Frame(root, height = 500, width = 5)
-test_frame = tk.Frame(root, height = 500, width = 5)
-learn_frame = tk.Frame(root, height = 500, width = 5)
-"""
-
-#progress_frame = tk.Frame(root, height = 500, width = 5)
 
 
-#MARK - HOME SCREEN CODE
-"""
-greeting_for_home = tk.Label(home_frame, text="Welcome to home screen", height = 2, font = Fonts().title_font)
-home_screen_button_h = tk.Button(home_frame, text = "HOME", width = 32, height = 2, command = ChangeToHomeFrame)
-test_screen_button_h = tk.Button(home_frame, text = "TEST", width = 32, height = 2, command = ChangeToTestFrame)
-learn_screen_button_h = tk.Button(home_frame, text = "LEARN", width = 32, height = 2, command = ChangeToLearnFrame)
-progress_screen_button_h = tk.Button(home_frame, text = "PROGRESS", width = 32, height = 2, command = ChangeToProgressFrame)
 
-greeting_for_home.grid(column = 0, row = 0, columnspan = 4)
-home_screen_button_h.grid(column = 0, row = 1)
-test_screen_button_h.grid(column = 1, row = 1)
-learn_screen_button_h.grid(column = 2, row = 1)
-progress_screen_button_h.grid(column = 3, row = 1)
-separator = ttk.Separator(home_frame, orient = "horizontal")
-separator.grid(column = 0, row = 4, columnspan = 4, sticky = "ew", pady = 10)
-"""
+
 #MARK - TEST SCREEN CODE
 """
 greeting_for_test = tk.Label(test_frame, text="TEST", height = 2, font = Fonts().title_font)
