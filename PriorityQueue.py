@@ -9,6 +9,7 @@ class PriorityQueue():
         self.topic_id = topic_id
         self.data_model = Model()
         self.queue = self.InitialiseQueue()
+        self.priority = ["red", "orange", "yellow", "green", ""]
 
     def InitialiseQueue(self):
         #accesses all the questions under the topicname
@@ -37,6 +38,27 @@ class PriorityQueue():
 
     def Dequeue(self):
         #dequeues a question from the front of a list
-        item = self.queue[0]
-        question = Question("", item[1], item[2], item[3])
+        question = self.queue[0]
+        self.queue.pop(0)
         return question
+
+    def Requeue(self, question_to_insert, new_confidence):
+        print("queue before is: \n\n ")
+        question_to_insert = list(question_to_insert)
+        question_to_insert[4] = new_confidence
+        question_to_insert = tuple(question_to_insert)
+        for question in self.queue:
+            print(question[1] ," : ", question[3], " with confidence ", question[4])
+
+
+        inserted = False
+        for question in self.queue:
+            if self.priority.index(new_confidence) < self.priority.index(question[4]):
+                self.queue.insert(self.queue.index(question), question_to_insert)
+                inserted = True
+                break
+        if inserted == False:
+            self.queue.append(question_to_insert)
+        print("queue after is: \n\n ")
+        for question in self.queue:
+            print(question[1] ," : ", question[3], " with confidence ", question[4])

@@ -6,6 +6,7 @@ from model import Model
 from functools import partial
 from PIL import ImageTk, Image
 from PriorityQueue import PriorityQueue
+import time
 
 
 from fonts import Fonts
@@ -68,12 +69,13 @@ class Progress():
         topic_names = self.data_model.GetTopics()
         #the first row should be row 6 - below the title
         row = 6
+        topicID = 1
         for topic_name in topic_names:
 
             test_label = tk.Label(self.progress_frame,width = 40, text = topic_name)
             arguments = partial(self.ShowProgress, topic_name)
             test_button = tk.Button(self.progress_frame,width = 15, text = "Click here for progress", command = arguments)
-            go_to_topic_button = tk.Button(self.progress_frame, width = 15, text = "Test yourself")
+            go_to_topic_button = tk.Button(self.progress_frame, width = 15, text = "Test yourself", command = partial(ChangeToTestFrame, greeting, topicID))
             reset_topic_button = tk.Button(self.progress_frame, width = 15, text = "Reset topic", command = partial(self.ResetQuestions, topic_name))
             test_label.grid(column = 0, row = row,columnspan = 2)
             test_button.grid(column = 2, row = row, columnspan = 1)
@@ -81,53 +83,63 @@ class Progress():
             reset_topic_button.grid(column = 4, row = row, columnspan = 1)
 
             row +=1
+            topicID += 1
+
 
         reset_button = tk.Button(self.progress_frame,width = 30, text = "Reset all to very unconfident", command = partial(self.ResetQuestions, "all"))
         reset_button.grid(column = 0, columnspan = 5, row = 20, pady = 10)
 
 class Test():
 
-    def __init__(self, root):
+    def __init__(self, root, topic_id):
         self.root = root
         self.data_model = Model()
         self.test_frame = tk.Frame(self.root)
         self.question_frame = tk.Frame(self.test_frame)
         self.answer_frame = tk.Frame(self.test_frame)
 
-    def Main(self, topic_id):
+    def Initialise(self, topic_id):
         topic_label = tk.Label(self.test_frame, text = data_model.GetTopicTitle(topic_id) ,height = 1, font = Fonts().topic_font)
         topic_label.grid(column = 0, row = 5, columnspan = 4)
-        question_queue = PriorityQueue(topic_id)
-
-        question = question_queue.Dequeue()
+        #the form of question is [QUESTIONID, QUESTIONTEXT, ANSWERTYPE, ANSWER, CONFIDENCE, PAPER]
+        self.question_queue = PriorityQueue(topic_id)
+        question = self.question_queue.Dequeue()
         self.DisplayQuestion(question)
-        print("hello")
 
     def DisplayImage(self, image_name):
 
-        photo_canvas = Canvas(answer_frame, width = 1200, height = 400)
-        photo_canvas.grid(column = 0, row = 6, columnspan = 4)
-        img = (Image.open(f'images/{image_name}.png'))
+        photo_canvas = Canvas(self.answer_frame, width = 1200, height = 300)
+        photo_canvas.grid(column = 0, row = 8, columnspan = 4)
+        print("trying to display image with name ", image_name)
+        self.img = (Image.open(f'images/{image_name}.png'))
+
         img_for_dimensions = PhotoImage(file = f'images/{image_name}.png')
         img_width = img_for_dimensions.width()
         img_height = img_for_dimensions.height()
-        img_hw_ratio = round(img_width / img_height)
-        print("width is ", img_width, " and image height is ", img_height)
+        img_hw_ratio = img_width / img_height
         print(img_hw_ratio)
 
-        if img_height < 300:
-            resized_image = img.resize((1000, int(1000 / img_hw_ratio)), Image.ANTIALIAS)
-            new_image = ImageTk.PhotoImage(resized_image)
-            photo_canvas.create_image(100,10, anchor = NW, image = new_image)
+        if img_height < 200:
+            print("<300")
+            self.resized_image = self.img.resize((1000, int(1000 / img_hw_ratio)), Image.ANTIALIAS)
+            self.new_image = ImageTk.PhotoImage(self.resized_image)
+            photo_canvas.create_image(600,150, image = self.new_image)
+        elif img_height >= 200 and img_height <= 300:
+            self.resized_image = self.img.resize((300, int(300 / img_hw_ratio)), Image.ANTIALIAS)
+            self.new_image = ImageTk.PhotoImage(self.resized_image)
+            photo_canvas.create_image(600,150, image = self.new_image)
         elif img_height > 300:
-            resized_image = img.resize((int(350 * img_hw_ratio), 350), Image.ANTIALIAS)
-            new_image = ImageTk.PhotoImage(resized_image)
-            photo_canvas.create_image(425,10, anchor = NW, image = new_image)
+            print(">300")
+            self.resized_image = self.img.resize((int(300 * img_hw_ratio), 300), Image.ANTIALIAS)
+            self.new_image = ImageTk.PhotoImage(self.resized_image)
+            photo_canvas.create_image(600,150,  image = self.new_image)
+
+
 
     def DisplayQuestion(self, question):
-
+        #the form of question is [QUESTIONID, QUESTIONTEXT, ANSWERTYPE, ANSWER, CONFIDENCE, PAPER]
         self.answer_frame.grid_forget()
-        question_label = tk.Label(self.question_frame,font = Fonts().answer_font, width = 75, height = 15, wraplength = 500, text = question.question)
+        question_label = tk.Label(self.question_frame,font = Fonts().answer_font, width = 75, height = 15, wraplength = 500, text = question[1])
         question_label.grid(column = 0, row = 6, columnspan = 4)
         show_answer_button = tk.Button(self.question_frame, text = "Show Answer", command = partial(self.DisplayAnswer, question))
         show_answer_button.grid(column = 0, row = 7, columnspan = 4)
@@ -135,16 +147,21 @@ class Test():
 
     def DisplayAnswer(self, question):
 
+        #cleans up the answer_frame before displaying.
+        for widget in self.answer_frame.winfo_children():
+            widget.grid_forget()
+
         self.question_frame.grid_forget()
         self.answer_frame.grid(column = 0, row = 6, columnspan = 4)
 
-        question_label = tk.Label(self.answer_frame,text = question.question, font = Fonts().question_alpha_font, width = 75, height = 2)
+        question_label = tk.Label(self.answer_frame,text = question[1], font = Fonts().question_alpha_font, width = 75, height = 2)
         question_label.grid(column = 0, row = 7, columnspan =4)
 
-        if question.answer_type == "image":
-            self.DisplayImage(question.answer)
+        if question[2] == "image":
+            self.DisplayImage(question[1])
+            print("Displaying image with name + ", question[1])
         else:
-            answer = tk.Label(self.answer_frame,font = Fonts().answer_font,  width = 75, height = 15, wraplength = 500, text = question.answer)
+            answer = tk.Label(self.answer_frame,font = Fonts().answer_font,  width = 75, height = 15, wraplength = 500, text = question[3])
             answer.grid(column = 0, row = 8, columnspan = 4)
 
 
@@ -160,8 +177,14 @@ class Test():
         skip_button = tk.Button(self.answer_frame, text = "Skip")
         skip_button.grid(column = 0, row = 10, columnspan = 4, pady = 10)
 
+
     def UpdateAndProceed(self, question, new_confidence):
-        data_model.UpdateQuestion(question.question, new_confidence)
+        #checks to see if all the questions are green
+        data_model.UpdateQuestion(question[0], new_confidence)
+        self.question_queue.Requeue(question, new_confidence)
+        new_question = self.question_queue.Dequeue()
+        self.DisplayQuestion(new_question)
+
 
 
 
@@ -191,6 +214,8 @@ def RootInitialisation():
     root.geometry("{}x{}".format(root_size_x, root_size_y))
     return root
 
+def RunHere():
+    print("hello world")
 def ChangeToHomeFrame(label):
     home_frame.grid(column = 0, row = 5, columnspan = 4)
     test_frame.grid_forget()
@@ -199,12 +224,26 @@ def ChangeToHomeFrame(label):
     UpdateLabel("home", label)
 
 def ChangeToTestFrame(label, topic_id):
+    for widget in test_frame.winfo_children():
+        widget.grid_forget()
     test_frame.grid(column = 0, row = 5, columnspan = 4)
     home_frame.grid_forget()
     learn_frame.grid_forget()
     progress_frame.grid_forget()
     UpdateLabel("test", label)
-    test.Main(topic_id)
+
+    if topic_id == -1:
+        #set general menu
+        print("here")
+        topic_names = data_model.GetTopics()
+        id = 1
+        for topic_name in topic_names:
+            but = tk.Button(test_frame, text = topic_name, width = 35, height = 2, command = partial(ChangeToTestFrame, label, id))
+            but.grid(column = 0, row = id, columnspan = 4)
+            id += 1
+
+    else:
+        test.Initialise(topic_id)
 
 def ChangeToLearnFrame(label):
     learn_frame.grid(column = 0, row = 5, columnspan = 4)
@@ -223,7 +262,7 @@ def ChangeToProgressFrame(label):
 
 def InitialiseMenu(root, greeting):
     home_screen_button_h = tk.Button(root, text = "HOME", width = 32, height = 2, command = partial(ChangeToHomeFrame, greeting))
-    test_screen_button_h = tk.Button(root, text = "TEST", width = 32, height = 2, command = partial(ChangeToTestFrame, greeting, 1))
+    test_screen_button_h = tk.Button(root, text = "TEST", width = 32, height = 2, command = partial(ChangeToTestFrame, greeting, -1))
     learn_screen_button_h = tk.Button(root, text = "LEARN", width = 32, height = 2, command = partial(ChangeToLearnFrame, greeting))
     progress_screen_button_h = tk.Button(root, text = "PROGRESS", width = 32, height = 2, command = partial(ChangeToProgressFrame, greeting))
 
@@ -242,7 +281,7 @@ def UpdateLabel(frame_name, label):
 
 data_model = Model()
 root = RootInitialisation()
-test = Test(root)
+test = Test(root, 1)
 test_frame = test.test_frame
 home = Home(root)
 home_frame = home.home_frame

@@ -37,6 +37,17 @@ class Model():
             print("The topic ID could not be found")
         return topic_id
 
+    def GetTopicIDFromQuestion(self, question_text):
+        topicIDQuery = f"SELECT TopicID FROM questions WHERE QuestionText = '{question_text}'"
+        self.c.execute(topicIDQuery)
+        topic_id = -1
+        try:
+            topic_id = self.c.fetchall()[0][0]
+        except IndexError:
+            print("The TopicID could not be found")
+        return topic_id
+
+
     def GetAllQuestions(self, topic_id):
         questions = []
         question_query = f"SELECT * FROM questions WHERE TopicID = '{topic_id}'"
@@ -45,7 +56,6 @@ class Model():
             questions.append(question)
         return questions
 
-        return questions
     def GetImageQuestions(self):
         image_urls = []
         image_titles = []
@@ -93,13 +103,15 @@ class Model():
                 print("Could not be found - invalid name.")
             self.database.commit()
 
-    def UpdateQuestion(self, question_text, new_confidence):
+    def UpdateQuestion(self, question_id, new_confidence):
+        """
         question_id_query = f"SELECT QuestionID FROM questions WHERE QuestionText = '{question_text}'"
         self.c.execute(question_id_query)
         try:
             question_id = self.c.fetchall()[0][0]
         except:
             print("Question not found")
+        """
         update_statement = f"UPDATE questions SET Confidence = '{new_confidence}' WHERE QuestionID = {question_id}"
         self.c.execute(update_statement)
         self.database.commit()
