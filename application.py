@@ -7,6 +7,7 @@ from functools import partial
 from PIL import ImageTk, Image
 from PriorityQueue import PriorityQueue
 import time
+import PyPDF2
 
 
 from fonts import Fonts
@@ -185,10 +186,12 @@ class Test():
         new_question = self.question_queue.Dequeue()
         self.DisplayQuestion(new_question)
 
-
-
-
-
+"""
+import pdfplumber
+from pdf2image import convert_from_path
+import pytesseract
+"""
+from tkPDFViewer import tkPDFViewer as pdf
 
 class Learn():
 
@@ -196,8 +199,46 @@ class Learn():
         self.root = root
         self.data_model = Model()
         self.learn_frame = tk.Frame(self.root)
-        #self.InitialiseBaseFrame()
+        self.FormatLearnScreen()
 
+    def FormatLearnScreen(self):
+        print("formatting")
+    def Test(self):
+        print("hello")
+
+        top = Toplevel(height = 500, width = 300)
+        v2 = pdf.ShowPdf().pdf_view(top, width = 100, height = 50, pdf_location = r"/Users/seanbendall/Documents/A-Level/Computer Science/NEA/Fundamentals of Programming.pdf")
+        v2.pack()
+        exit_button = tk.Button(top, command = top.destroy, text = "Exit")
+        exit_button.pack()
+        top.mainloop()
+
+        """pitkP
+        pdfFileObj = open('Fundamentals of Programming.pdf', 'rb')
+        pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+
+        print(pdfReader.numPages)
+        pageObj = pdfReader.getPage(1)
+        print(pageObj.extractText())
+        pdfFileObj.close()
+
+        with pdfplumber.open(r'/Users/seanbendall/Documents/A-Level/Computer Science/NEA/Fundamentals of Programming.pdf') as pdf:
+            first_page = pdf.pages[1]
+            print(first_page.extract_text())
+
+
+        pages = convert_from_path(r'/Users/seanbendall/Documents/A-Level/Computer Science/NEA/Fundamentals of Programming.pdf', 300)
+        for page in pages:
+            print("hello")
+            page.save('out.jpg', 'JPEG')
+
+
+        pytesseract.pytesseract.tesseract_cmd = r'/usr/local/bin/tesseract'
+        print(pytesseract.image_to_string(r'/Users/seanbendall/Documents/A-Level/Computer Science/NEA/out.jpg'))
+
+        label = tk.Label(self.learn_frame,anchor = W,text = pytesseract.image_to_string(r'/Users/seanbendall/Documents/A-Level/Computer Science/NEA/out.jpg'))
+        label.grid(column = 0, row = 0)
+        """
 class Home():
 
     def __init__(self, root):
