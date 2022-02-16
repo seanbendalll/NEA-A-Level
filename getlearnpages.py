@@ -10,7 +10,7 @@ data_model = Model()
 for topic_name in data_model.GetTopics():
     os.mkdir(f"/Users/seanbendall/Documents/A-Level/Computer Science/NEA/notes/{topic_name}", 0o666)
 """
-"""
+
 sub_topics = ["1.1. Programming",
              "1.2. Programming Paradigms",
              "7.1. Data Structures and Abstract Data Types",
@@ -51,8 +51,9 @@ sub_topics = ["1.1. Programming",
              "12.2. Writing Functional Programs",
              "2. Definitions"
              ]
-"""
 
+
+"""
 for sub_topic in sub_topics:
     print(sub_topic)
     #uses the first number in the title of the page to get the main topic it is from
@@ -66,3 +67,4 @@ for sub_topic in sub_topics:
     for page in pages:
         page.save(f"/Users/seanbendall/Documents/A-Level/Computer Science/NEA/notes/{parent_topic}/{sub_topic} {n}.png", 'PNG')
         n +=1
+"""ap

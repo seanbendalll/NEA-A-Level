@@ -8,6 +8,7 @@ from PIL import ImageTk, Image
 from PriorityQueue import PriorityQueue
 import time
 import PyPDF2
+import os
 
 
 from fonts import Fonts
@@ -192,24 +193,53 @@ from pdf2image import convert_from_path
 import pytesseract
 
 from tkPDFViewer import tkPDFViewer as pdf
-
+from getlearnpages import sub_topics as st
 class Learn():
 
     def __init__(self, root):
         self.root = root
         self.data_model = Model()
         self.learn_frame = tk.Frame(self.root)
+        self.sub_topic_frame = Frame(self.learn_frame)
         self.FormatLearnScreen()
 
     def FormatLearnScreen(self):
-        button = tk.Button(self.learn_frame, command = partial(self.DisplayNotes, "1.1 Programming"), text = "press here")
+        button = tk.Button(self.learn_frame, command = partial(self.DisplayNotes, "1.1. Programming 1"), text = "press here")
         button.grid(column = 0, row = 0)
-        print("formatting")
+        row = 1
+        for topic_title in self.data_model.GetTopics():
+            row += 1
+            topic_button = tk.Button(self.learn_frame, text = f"{topic_title}" ,command = partial(self.DisplaySubTopics, topic_title))
+            topic_button.grid(row = row, column = 0, sticky = W)
+
+    def DisplaySubTopics(self, topic_name):
+        print("hello")
+
+        self.sub_topic_frame.grid(column = 1, row = 1, rowspan = 12)
+        for widget in self.sub_topic_frame.winfo_children():
+            widget.grid_forget()
+        #checks if it is a single or double digit id
+        if topic_name[1] == " " or topic_name[1] == ".":
+            id = topic_name[0] + "."
+        else:
+            id = topic_name[:2]
+        row = 1
+        for sub_topic in st:
+            if id == sub_topic[:2]:
+                sub_topic_button = tk.Button(self.sub_topic_frame, text = sub_topic, command = partial(self.DisplayNotes,sub_topic))
+                sub_topic_button.grid(column = 0, row = row)
+                row +=1
+
+    def FetchSubTopicImages(self, sub_topic_name):
+        sub_topic_images = []
+        print(os.listdir())
+        for file in os.listdir(f"/Users/seanbendall/Documents/A-Level/Computer Science/NEA/notes/{self.data_model.}"):
+            print(file)
+        return sub_topic_images
 
     def DisplayNotes(self, sub_topic_name):
-        print("hello")
         topic_name = data_model.GetTopicTitle(sub_topic_name[0])
-
+        sub_topic_images = self.FetchSubTopicImages(sub_topic_name)
 
         """
         top = Toplevel(height = 500, width = 300)
@@ -230,11 +260,11 @@ class Learn():
         top = Toplevel(height = 500, width = 300)
         canvas = Canvas(top, width = 550, height = 800)
         canvas.grid(column = 0,row = 0, columnspan = 3)
-        img = (Image.open(f'notes/{topic_name}/{sub_topic_name}.png'))
-        pagelinks = ["1.1 Programming"]
+        """
+        img = (Image.open(f'/Users/seanbendall/Documents/A-Level/Computer Science/NEA/notes/{topic_name}/{sub_topic_name}.png'))
 
 
-        img_for_dimensions = PhotoImage(file = f'notes/{topic_name}/{sub_topic_name}.png')
+        img_for_dimensions = PhotoImage(file = f'/Users/seanbendall/Documents/A-Level/Computer Science/NEA/notes/{topic_name}/{sub_topic_name}.png')
         img_width = img_for_dimensions.width()
         img_height = img_for_dimensions.height()
         img_hw_ratio = img_width / img_height
@@ -247,6 +277,7 @@ class Learn():
         next_page.grid(column = 2, row = 1, pady = 10)
         previous_page = tk.Button(top, text = "Previous Page", width = 10)
         previous_page.grid(column = 1 ,row = 1, pady = 10)
+        """
         top.mainloop()
 
 class Home():
