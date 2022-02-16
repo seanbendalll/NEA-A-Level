@@ -186,11 +186,11 @@ class Test():
         new_question = self.question_queue.Dequeue()
         self.DisplayQuestion(new_question)
 
-"""
+
 import pdfplumber
 from pdf2image import convert_from_path
 import pytesseract
-"""
+
 from tkPDFViewer import tkPDFViewer as pdf
 
 class Learn():
@@ -202,43 +202,53 @@ class Learn():
         self.FormatLearnScreen()
 
     def FormatLearnScreen(self):
+        button = tk.Button(self.learn_frame, command = partial(self.DisplayNotes, "1.1 Programming"), text = "press here")
+        button.grid(column = 0, row = 0)
         print("formatting")
-    def Test(self):
-        print("hello")
 
+    def DisplayNotes(self, sub_topic_name):
+        print("hello")
+        topic_name = data_model.GetTopicTitle(sub_topic_name[0])
+
+
+        """
         top = Toplevel(height = 500, width = 300)
         v2 = pdf.ShowPdf().pdf_view(top, width = 100, height = 50, pdf_location = r"/Users/seanbendall/Documents/A-Level/Computer Science/NEA/Fundamentals of Programming.pdf")
-        v2.pack()
+        v2.grid(column = 0, row = 0)
         exit_button = tk.Button(top, command = top.destroy, text = "Exit")
-        exit_button.pack()
+        exit_button.grid(column = 0, row = 1)
         top.mainloop()
-
-        """pitkP
-        pdfFileObj = open('Fundamentals of Programming.pdf', 'rb')
-        pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
-
-        print(pdfReader.numPages)
-        pageObj = pdfReader.getPage(1)
-        print(pageObj.extractText())
-        pdfFileObj.close()
-
-        with pdfplumber.open(r'/Users/seanbendall/Documents/A-Level/Computer Science/NEA/Fundamentals of Programming.pdf') as pdf:
-            first_page = pdf.pages[1]
-            print(first_page.extract_text())
+        """
 
 
+        """
         pages = convert_from_path(r'/Users/seanbendall/Documents/A-Level/Computer Science/NEA/Fundamentals of Programming.pdf', 300)
         for page in pages:
             print("hello")
-            page.save('out.jpg', 'JPEG')
-
-
-        pytesseract.pytesseract.tesseract_cmd = r'/usr/local/bin/tesseract'
-        print(pytesseract.image_to_string(r'/Users/seanbendall/Documents/A-Level/Computer Science/NEA/out.jpg'))
-
-        label = tk.Label(self.learn_frame,anchor = W,text = pytesseract.image_to_string(r'/Users/seanbendall/Documents/A-Level/Computer Science/NEA/out.jpg'))
-        label.grid(column = 0, row = 0)
+            page.save('out.png', 'PNG')
         """
+        top = Toplevel(height = 500, width = 300)
+        canvas = Canvas(top, width = 550, height = 800)
+        canvas.grid(column = 0,row = 0, columnspan = 3)
+        img = (Image.open(f'notes/{topic_name}/{sub_topic_name}.png'))
+        pagelinks = ["1.1 Programming"]
+
+
+        img_for_dimensions = PhotoImage(file = f'notes/{topic_name}/{sub_topic_name}.png')
+        img_width = img_for_dimensions.width()
+        img_height = img_for_dimensions.height()
+        img_hw_ratio = img_width / img_height
+        resized_image = img.resize((550, 800))
+        new_image = ImageTk.PhotoImage(resized_image)
+        canvas.create_image(0,0, anchor = NW, image = new_image)
+        page_label = tk.Label(top, text = "Page 1/10", width = 10)
+        page_label.grid(column = 0, row = 1, pady = 10)
+        next_page = tk.Button(top, text = "Next Page", width = 10)
+        next_page.grid(column = 2, row = 1, pady = 10)
+        previous_page = tk.Button(top, text = "Previous Page", width = 10)
+        previous_page.grid(column = 1 ,row = 1, pady = 10)
+        top.mainloop()
+
 class Home():
 
     def __init__(self, root):
