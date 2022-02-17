@@ -67,4 +67,4 @@ for sub_topic in sub_topics:
     for page in pages:
         page.save(f"/Users/seanbendall/Documents/A-Level/Computer Science/NEA/notes/{parent_topic}/{sub_topic} {n}.png", 'PNG')
         n +=1
-"""ap
+"""

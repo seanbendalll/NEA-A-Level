@@ -194,6 +194,7 @@ import pytesseract
 
 from tkPDFViewer import tkPDFViewer as pdf
 from getlearnpages import sub_topics as st
+
 class Learn():
 
     def __init__(self, root):
@@ -201,7 +202,13 @@ class Learn():
         self.data_model = Model()
         self.learn_frame = tk.Frame(self.root)
         self.sub_topic_frame = Frame(self.learn_frame)
+        self.top = Toplevel(height = 500, width = 300)
+        self.top.withdraw()
         self.FormatLearnScreen()
+
+    def Minimise(self):
+        self.top.withdraw()
+        print("withdrawn")
 
     def FormatLearnScreen(self):
         button = tk.Button(self.learn_frame, command = partial(self.DisplayNotes, "1.1. Programming 1"), text = "press here")
@@ -226,20 +233,50 @@ class Learn():
         row = 1
         for sub_topic in st:
             if id == sub_topic[:2]:
-                sub_topic_button = tk.Button(self.sub_topic_frame, text = sub_topic, command = partial(self.DisplayNotes,sub_topic))
+                sub_topic_button = tk.Button(self.sub_topic_frame, text = sub_topic, command = partial(self.DisplayNotes,sub_topic, 1))
                 sub_topic_button.grid(column = 0, row = row)
                 row +=1
 
     def FetchSubTopicImages(self, sub_topic_name):
         sub_topic_images = []
-        print(os.listdir())
-        for file in os.listdir(f"/Users/seanbendall/Documents/A-Level/Computer Science/NEA/notes/{self.data_model.}"):
-            print(file)
+        id = self.GetTopicIDFromString(sub_topic_name)
+        for file in os.listdir(f"/Users/seanbendall/Documents/A-Level/Computer Science/NEA/notes/{self.data_model.GetTopicTitle(id)}"):
+            if file[-4:] == ".png" and sub_topic_name in file:
+                sub_topic_images.append(file)
+
+        sub_topic_images.sort()
+        temp = []
+        sub_topics_to_remove = []
+        for sub_topic in sub_topic_images:
+            if sub_topic[-6] != " ":
+                sub_topics_to_remove.append(sub_topic)
+                temp.append(sub_topic)
+
+        for sub_topic in sub_topics_to_remove:
+            sub_topic_images.remove(sub_topic)
+
+        sub_topic_images = sub_topic_images + temp
+        print("new list is ", sub_topic_images)
         return sub_topic_images
 
-    def DisplayNotes(self, sub_topic_name):
-        topic_name = data_model.GetTopicTitle(sub_topic_name[0])
+    def UpdatePage(self, sub_topic_name, page_number):
+        if page_number >= 1 and page_number <= len(self.FetchSubTopicImages(sub_topic_name)):
+            self.DisplayNotes(sub_topic_name, page_number)
+
+    def GetTopicIDFromString(self, sub_topic_name):
+        if sub_topic_name[1] == " " or sub_topic_name[1] == ".":
+            id = sub_topic_name[0]
+        else:
+            id = sub_topic_name[:2]
+        return id
+
+    def DisplayNotes(self, sub_topic_name, page_number):
+        id = self.GetTopicIDFromString(sub_topic_name)
+        topic_name = data_model.GetTopicTitle(id)
+        print(sub_topic_name)
+
         sub_topic_images = self.FetchSubTopicImages(sub_topic_name)
+
 
         """
         top = Toplevel(height = 500, width = 300)
@@ -257,28 +294,30 @@ class Learn():
             print("hello")
             page.save('out.png', 'PNG')
         """
-        top = Toplevel(height = 500, width = 300)
-        canvas = Canvas(top, width = 550, height = 800)
-        canvas.grid(column = 0,row = 0, columnspan = 3)
-        """
-        img = (Image.open(f'/Users/seanbendall/Documents/A-Level/Computer Science/NEA/notes/{topic_name}/{sub_topic_name}.png'))
+        #top = Toplevel(height = 500, width = 300)
+        self.top.state(newstate = "normal")
 
+        canvas = Canvas(self.top, width = 550, height = 800)
+        canvas.grid(column = 0,row = 0, columnspan = 4)
 
-        img_for_dimensions = PhotoImage(file = f'/Users/seanbendall/Documents/A-Level/Computer Science/NEA/notes/{topic_name}/{sub_topic_name}.png')
-        img_width = img_for_dimensions.width()
-        img_height = img_for_dimensions.height()
-        img_hw_ratio = img_width / img_height
+        img = (Image.open(f'/Users/seanbendall/Documents/A-Level/Computer Science/NEA/notes/{topic_name}/{sub_topic_images[page_number -1]}'))
         resized_image = img.resize((550, 800))
         new_image = ImageTk.PhotoImage(resized_image)
         canvas.create_image(0,0, anchor = NW, image = new_image)
-        page_label = tk.Label(top, text = "Page 1/10", width = 10)
+
+        page_label = tk.Label(self.top, text = f"Page {page_number}/{len(sub_topic_images)}", width = 10)
         page_label.grid(column = 0, row = 1, pady = 10)
-        next_page = tk.Button(top, text = "Next Page", width = 10)
+
+
+        next_page = tk.Button(self.top, text = "Next Page", width = 10, command = partial(self.UpdatePage, sub_topic_name, page_number + 1))
         next_page.grid(column = 2, row = 1, pady = 10)
-        previous_page = tk.Button(top, text = "Previous Page", width = 10)
+        previous_page = tk.Button(self.top, text = "Previous Page", width = 10, command = partial(self.UpdatePage, sub_topic_name, page_number -1))
         previous_page.grid(column = 1 ,row = 1, pady = 10)
-        """
-        top.mainloop()
+        exit_button = tk.Button(self.top, text = "Exit", width = 10, command = self.Minimise)
+        exit_button.grid(column = 3, row = 1, pady = 10)
+        self.top.mainloop()
+
+
 
 class Home():
 
