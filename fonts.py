@@ -11,3 +11,5 @@ class Fonts():
         self.percentage_font = tk.font.Font(family = "Helvetica", size = 36)
         self.answer_font = tk.font.Font(family = "Helvetica", size = 20, weight = "bold")
         self.question_alpha_font = tk.font.Font(family = "roboto", size = 12, slant = "italic")
+        self.main_font = tk.font.Font(family = "Helvetica", size = 45, weight = "bold")
+        self.description_font = tk.font.Font(family = "roboto", size = 16, slant = "italic")

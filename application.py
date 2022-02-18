@@ -325,6 +325,51 @@ class Home():
         self.root = root
         self.data_model = Model()
         self.home_frame = tk.Frame(self.root)
+        self.FormatHomeScreen()
+
+    def FormatHomeScreen(self):
+        title_label = tk.Label(self.home_frame, text = "ALCA - A Level Computer Science Application", font = Fonts().main_font)
+        title_label.grid(column = 0, row = 0)
+
+        desc = """
+        Hello, and welcome to ALCA, an AQA A-Level Computer Science flashcard app. Answer questions, learn from notes, and track your progress, in this all in one revision app.
+        """
+        description = tk.Label(self.home_frame, text = desc, font = Fonts().description_font, wraplength = 1000)
+        description.grid(column = 0, row = 1)
+
+        canvas = Canvas(self.home_frame, width = 600, height = 300)
+        canvas.grid(column = 0,row = 2)
+
+        self.img = (Image.open(r'/Users/seanbendall/Documents/A-Level/Computer Science/NEA/ALCALogo.png'))
+        self.resized_image = self.img.resize((600, 300))
+        self.new_image = ImageTk.PhotoImage(self.resized_image)
+        canvas.create_image(0,0, anchor = NW, image = self.new_image)
+
+        progress_display_label = tk.Label(self.home_frame, text = "Current Overall Progress: ")
+        progress_display_label.grid(column = 0, row = 3, pady = (0,20))
+        progress_canvas = Canvas(self.home_frame, width = 1000, height = 20)
+        progress_canvas.grid(column = 0, row = 4)
+
+
+
+        red_total = 0
+        orange_total = 0
+        yellow_total = 0
+        green_total = 0
+        for topic in data_model.GetTopics():
+            progress_for_subject = data_model.GetProgress(topic)
+            red_total += progress_for_subject["Red"]
+            orange_total += progress_for_subject["Orange"]
+            yellow_total += progress_for_subject["Yellow"]
+            green_total += progress_for_subject["Green"]
+
+        self.progress_img = Image.new("RGB", (red_total + orange_total + yellow_total + green_total, 20), "#FF0000")
+        self.progress_img.paste((256,165, 0), (0, 0, orange_total + yellow_total + green_total, 20)) #orange bar
+        self.progress_img.paste((256,256, 0), (0, 0, yellow_total + green_total, 20)) #yellow bar
+        self.progress_img.paste((0,256, 0), (0, 0, green_total, 20)) #green bar
+        self.progress_img.save("progress.png")
+        self.progress_display = ImageTk.PhotoImage((Image.open(r'/Users/seanbendall/Documents/A-Level/Computer Science/NEA/progress.png')))
+        progress_canvas.create_image(500, 0, image = self.progress_display)
 
 def RootInitialisation():
     root = tk.Tk()
@@ -397,7 +442,7 @@ def InitialiseMenu(root, greeting):
 
 
 def UpdateLabel(frame_name, label):
-    label['text'] = f"Welcome to the {frame_name} screen"
+    label['text'] = f"{frame_name.upper()} SCREEN"
 
 
 data_model = Model()
