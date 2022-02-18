@@ -1,38 +1,45 @@
+#the required imports for the
 import tkinter as tk
-from tkinter import ttk
-from tkinter import messagebox
+from tkinter import ttk, messagebox
 from tkinter import *
 from model import Model
 from functools import partial
 from PIL import ImageTk, Image
 from PriorityQueue import PriorityQueue
-import time
 import PyPDF2
 import os
-
-
 from fonts import Fonts
+import pdfplumber
+from getlearnpages import sub_topics as st
 
+#class for the progress screen
 class Progress():
 
     def __init__(self, root):
         self.root = root
+
+        #localises a data model to the progress screen to access the database
         self.data_model = Model()
+        #frame for the progress screen
         self.progress_frame = tk.Frame(self.root)
 
+    #function for the confirmation of the resetting of the topics, to be called upon a reset button being pressed
     def ResetQuestions(self, topic_name):
         confirmation = tk.messagebox.askquestion("Warning", "Are you sure?")
         if confirmation == 'yes':
+            #calls the data model to set all the confidences to red
             self.data_model.ResetQuestions(topic_name)
 
+    #adds all the dictionary values, in this case to get the total number of questions in a topic.
     def SumDictionaryKeys(self, dict):
         num = 0
         for value in dict:
             num += dict[value]
         return num
 
+    #function to show the progress given a topic name.
     def ShowProgress(self, topic_name):
-        #progress pane modification
+        #uses a top level (a separate window) to show the progress for a given subject.
         progress_pane = Toplevel()
         progress_pane.title(f"Progress for {topic_name}")
         progress_pane.resizable(False, False)
@@ -188,12 +195,7 @@ class Test():
         self.DisplayQuestion(new_question)
 
 
-import pdfplumber
-from pdf2image import convert_from_path
-import pytesseract
 
-from tkPDFViewer import tkPDFViewer as pdf
-from getlearnpages import sub_topics as st
 
 class Learn():
 
@@ -277,23 +279,6 @@ class Learn():
 
         sub_topic_images = self.FetchSubTopicImages(sub_topic_name)
 
-
-        """
-        top = Toplevel(height = 500, width = 300)
-        v2 = pdf.ShowPdf().pdf_view(top, width = 100, height = 50, pdf_location = r"/Users/seanbendall/Documents/A-Level/Computer Science/NEA/Fundamentals of Programming.pdf")
-        v2.grid(column = 0, row = 0)
-        exit_button = tk.Button(top, command = top.destroy, text = "Exit")
-        exit_button.grid(column = 0, row = 1)
-        top.mainloop()
-        """
-
-
-        """
-        pages = convert_from_path(r'/Users/seanbendall/Documents/A-Level/Computer Science/NEA/Fundamentals of Programming.pdf', 300)
-        for page in pages:
-            print("hello")
-            page.save('out.png', 'PNG')
-        """
         #top = Toplevel(height = 500, width = 300)
         self.top.state(newstate = "normal")
 
@@ -460,73 +445,3 @@ greeting.grid(column = 0, row = 0, columnspan = 4)
 InitialiseMenu(root, greeting)
 ChangeToHomeFrame(greeting)
 root.mainloop()
-#TEST CODE
-"""
-def ShowAnswer():
-    question_frame.grid_forget()
-    answer_frame.grid(column = 0, row = 6, columnspan = 4)
-
-def ShowQuestion():
-    answer_frame.grid_forget()
-    question_frame.grid(column = 0, row = 6, columnspan = 4)
-"""
-
-
-
-
-"""
-#CODE FOR WHEN ANSWER IS NOT SHOWN
-question_frame = tk.Frame(test_frame)
-question_label = tk.Label(question_frame,width = 75, height = 20, wraplength = 500, text = "qweuquefhysdfgysgyfugyuyyyugyuyuggyugyugyugyugyuuiawdhfuiashdfuiahsdfuihaisdufhasdfshadfjihasdjihasduifhhuiasdffhuiasdfihuasdfhuiasdf")
-question_label.grid(column = 0, row = 6, columnspan = 4)
-show_answer_button = tk.Button(question_frame, text = "Show Answer", command = ShowAnswer)
-show_answer_button.grid(column = 0, row = 7, columnspan = 4)
-question_frame.grid(column = 0, row = 6, columnspan = 4)
-
-
-
-#CODE FOR WHEN ANSWER IS SHOWN
-answer_frame = tk.Frame(test_frame)
-
-
-def DisplayImage(image_name):
-
-    photo_canvas = Canvas(answer_frame, width = 1200, height = 400)
-    photo_canvas.grid(column = 0, row = 6, columnspan = 4)
-    img = (Image.open(f'images/{image_name}.png'))
-    img_for_dimensions = PhotoImage(file = f'images/{image_name}.png')
-    img_width = img_for_dimensions.width()
-    img_height = img_for_dimensions.height()
-    img_hw_ratio = round(img_width / img_height)
-    print("width is ", img_width, " and image height is ", img_height)
-    print(img_hw_ratio)
-
-    if img_height < 300:
-        resized_image = img.resize((1000, int(1000 / img_hw_ratio)), Image.ANTIALIAS)
-        new_image = ImageTk.PhotoImage(resized_image)
-        photo_canvas.create_image(100,10, anchor = NW, image = new_image)
-    elif img_height > 300:
-        resized_image = img.resize((int(350 * img_hw_ratio), 350), Image.ANTIALIAS)
-        new_image = ImageTk.PhotoImage(resized_image)
-        photo_canvas.create_image(425,10, anchor = NW, image = new_image)
-
-
-green_button = tk.Button(answer_frame, bg = "green", text = "Very Confident", height = 5, width = 15)
-orange_button = tk.Button(answer_frame, bg = "orange", text = "Confident", height = 5, width = 15)
-yellow_button = tk.Button(answer_frame, bg = "yellow", text = "Mediocre", height = 5, width = 15)
-red_button = tk.Button(answer_frame, bg = "maroon", text = "Unconfident", height = 5, width = 15)
-green_button.grid(column = 0, row = 7)
-orange_button.grid(column = 1, row = 7)
-yellow_button.grid(column = 2, row = 7)
-red_button.grid(column = 3, row = 7)
-
-skip_button = tk.Button(answer_frame, text = "Skip")
-skip_button.grid(column = 0, row = 8, columnspan = 4, pady = 10)
-"""
-
-#main startup
-#application = Application()
-"""
-home_frame.pack(fill = "both") #pack the frames but grid the stuff within the frames
-root.mainloop()
-"""
