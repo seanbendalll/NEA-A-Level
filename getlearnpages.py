@@ -4,13 +4,16 @@ import os
 from pdf2image import convert_from_path
 import pytesseract
 
+#local data_model
 data_model = Model()
 
+#creates the required directories, named after the topics inside the datamodel.
 """
 for topic_name in data_model.GetTopics():
     os.mkdir(f"/Users/seanbendall/Documents/A-Level/Computer Science/NEA/notes/{topic_name}", 0o666)
 """
 
+# a list of the sub topics outlined in physics and maths tutor.
 sub_topics = ["1.1. Programming",
              "1.2. Programming Paradigms",
              "7.1. Data Structures and Abstract Data Types",
@@ -53,15 +56,16 @@ sub_topics = ["1.1. Programming",
              ]
 
 
+
 """
 for sub_topic in sub_topics:
-    print(sub_topic)
-    #uses the first number in the title of the page to get the main topic it is from
+    #uses the first number in the title of the page to get the parent topic.
     if sub_topic[1] == ".":
         parent_topic = data_model.GetTopicTitle(sub_topic[0])
     else:
         parent_topic = data_model.GetTopicTitle(sub_topic[:2])
 
+    #uses an imported module convert from path to convert a saved pdf into images.
     pages = convert_from_path(rf'/Users/seanbendall/Documents/A-Level/Computer Science/NEA/notes/{parent_topic}/{sub_topic}.pdf', 300)
     n = 1
     for page in pages:
