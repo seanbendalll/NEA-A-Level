@@ -30,12 +30,6 @@ class Progress():
             #calls the data model to set all the confidences to red
             self.data_model.ResetQuestions(topic_name)
 
-    #adds all the dictionary values, in this case to get the total number of questions in a topic.
-    def SumDictionaryKeys(self, dict):
-        num = 0
-        for value in dict:
-            num += dict[value]
-        return num
 
     #function to show the progress given a topic name.
     def ShowProgress(self, topic_name):
@@ -68,7 +62,8 @@ class Progress():
         green_label.grid(column = 0, row = 5, sticky = "w", padx = 10, pady = 7)
 
         #creates a percentage shown to show the percentage of questions as green.
-        percentage = int(progress_dictionary['Green'] / self.SumDictionaryKeys(progress_dictionary) * 100)
+        total_questions = self.data_model.GetNumberOfQuestions(topic_name)
+        percentage = int(progress_dictionary['Green'] / total_questions * 100)
         percentage = tk.Label(progress_pane, text = f"{percentage}%",font = Fonts().percentage_font)
         percentage.grid(column = 2, row = 3, rowspan = 2)
         exit_button = tk.Button(progress_pane, text = "Exit", command = progress_pane.destroy)
@@ -307,38 +302,6 @@ class Learn():
             id = sub_topic_name[:2]
         return id
 
-    #a function for displaying the notes, given a page number and the sub topic to find.
-    def DisplayNotes(self, sub_topic_name, page_number):
-        #gets the topic_name using the primary key id and gets the page id for the subtopic.
-        id = self.GetTopicIDFromString(sub_topic_name)
-        topic_name = data_model.GetTopicTitle(id)
-        sub_topic_images = self.FetchSubTopicImages(sub_topic_name)
-
-        #displays the top level.
-        self.top.state(newstate = "normal")
-
-        #creates a canvas for the display of the image.
-        canvas = Canvas(self.top, width = 550, height = 800)
-        canvas.grid(column = 0,row = 0, columnspan = 4)
-
-        #fetches the image from the corresponding file path, resizes it, and then displays it on the top level.
-        img = (Image.open(f'/Users/seanbendall/Documents/A-Level/Computer Science/NEA/notes/{topic_name}/{sub_topic_images[page_number -1]}'))
-        resized_image = img.resize((550, 800))
-        new_image = ImageTk.PhotoImage(resized_image)
-        canvas.create_image(0,0, anchor = NW, image = new_image)
-
-        page_label = tk.Label(self.top, text = f"Page {page_number}/{len(sub_topic_images)}", width = 10)
-        page_label.grid(column = 0, row = 1, pady = 10)
-
-        #adds the forward and back buttons so that the user can navigate between pages.
-        next_page = tk.Button(self.top, text = "Next Page", width = 10, command = partial(self.UpdatePage, sub_topic_name, page_number + 1))
-        next_page.grid(column = 2, row = 1, pady = 10)
-        previous_page = tk.Button(self.top, text = "Previous Page", width = 10, command = partial(self.UpdatePage, sub_topic_name, page_number -1))
-        previous_page.grid(column = 1 ,row = 1, pady = 10)
-        #an exit button, as the close button will terminate the window rather than withdrawing it.
-        exit_button = tk.Button(self.top, text = "Exit", width = 10, command = self.top.withdraw)
-        exit_button.grid(column = 3, row = 1, pady = 10)
-        self.top.mainloop()
 
 
 #a class for the home screen.
@@ -433,6 +396,7 @@ def ChangeToTestFrame(label, topic_id):
     #hides all the current widgets on the test frame
     for w in test_frame.winfo_children():
         w.grid_forget()
+
     test_frame.grid(column = 0, row = 5, columnspan = 4)
     home_frame.grid_forget()
     learn_frame.grid_forget()
@@ -472,6 +436,7 @@ def ChangeToProgressFrame(label):
     progress.FormatProgressScreen()
     UpdateLabel("progress", label)
 
+
 #the menu will sit on the root of the application at the top, allowing as a tab bar menu.
 def InitialiseMenu(root, greeting):
 
@@ -495,9 +460,14 @@ def InitialiseMenu(root, greeting):
 def UpdateLabel(frame_name, label):
     label['text'] = f"{frame_name.upper()} SCREEN"
 
+
 #initialises a global data model using the imported model class.
 data_model = Model()
 root = RootInitialisation()
+#sets the initial global greeting label.
+greeting = tk.Label(root, text=f"Welcome to home Screen", height = 2, font = Fonts().title_font)
+greeting.grid(column = 0, row = 0, columnspan = 4)
+InitialiseMenu(root, greeting)
 
 #creates the frames and their objects, creating global references to their local frames, in order to hide them.
 test = Test(root, 1)
@@ -509,10 +479,7 @@ progress_frame = progress.progress_frame
 learn = Learn(root)
 learn_frame = learn.learn_frame
 
-#sets the initial global greeting label.
-greeting = tk.Label(root, text=f"Welcome to home Screen", height = 2, font = Fonts().title_font)
-greeting.grid(column = 0, row = 0, columnspan = 4)
-InitialiseMenu(root, greeting)
+
 
 #changes to the home screen for the first time.
 ChangeToHomeFrame(greeting)

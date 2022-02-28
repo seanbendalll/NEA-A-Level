@@ -10,12 +10,6 @@ class Block:
     def __str__(self):
         return str("Block(" + self.block_id + ", " + self.block_type + ", " + str(self.has_children) + ", " + self.content + ", " + self.topic + ", " + str(self.is_answer) + ")")
 
-    def getAnswer(self):
-        #if the answer is in bold or an image it is the answer
-        answer = []
-        answer_type = ''
-
-        return (answer, answer_type)
 
 class Question:
     def __init__(self, topic, question, answer_type, answer):

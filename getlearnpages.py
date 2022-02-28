@@ -8,10 +8,9 @@ import pytesseract
 data_model = Model()
 
 #creates the required directories, named after the topics inside the datamodel.
-"""
+
 for topic_name in data_model.GetTopics():
     os.mkdir(f"/Users/seanbendall/Documents/A-Level/Computer Science/NEA/notes/{topic_name}", 0o666)
-"""
 
 # a list of the sub topics outlined in physics and maths tutor.
 sub_topics = ["1.1. Programming",

@@ -8,11 +8,18 @@ from model import Model
 data_model = Model()
 
 #getting the key from my environmental variables.
-TOKEN = os.getenv('NOTION_KEY')
+#TOKEN = os.getenv('NOTION_KEY')
+
+#uses the hidden file in the git ignore to access the token.
+def GetToken():
+    token = ""
+    with open("token.txt") as file:
+        token = file.readline()
+    return token
 
 #setting the headers for the HTTPS request
 headers = {
-    "Authorization": "Bearer " + TOKEN,
+    "Authorization": "Bearer " + GetToken(),
     "Notion-Version":"2021-08-16"
 }
 

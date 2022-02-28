@@ -45,6 +45,7 @@ class Model():
             print("The topic ID could not be found")
         return topic_id
 
+    """
     #gets the associated topic id from the question.
     def GetTopicIDFromQuestion(self, question_text):
         topicIDQuery = f"SELECT TopicID FROM questions WHERE QuestionText = '{question_text}'"
@@ -55,6 +56,7 @@ class Model():
         except IndexError:
             print("The TopicID could not be found")
         return topic_id
+    """
 
     #retrieves all the questions from a given topic given its ID
     def GetAllQuestions(self, topic_id):
@@ -113,7 +115,7 @@ class Model():
             reset_query = f"""
             UPDATE questions
             SET Confidence = 'red'
-            WHERE TopicID = {topic_id}
+            WHERE TopicID = {topic_name}
             """
             try:
                 self.c.execute(reset_query)
@@ -127,10 +129,16 @@ class Model():
         self.c.execute(update_statement)
         self.database.commit()
 
+    def GetNumberOfQuestions(self, topic_name):
+        topic_id = self.GetTopicID(topic_name)
+        query = f"SELECT COUNT(*) FROM questions WHERE TopicID = {topic_id}"
+        self.c.execute(query)
+        print(self.c.fetchall())
+
     #function to generate a progress dictionary for a given subject.
-    def GetProgress(self, subject_name):
+    def GetProgress(self, topic_name):
         #selects the questions
-        topic_id = self.GetTopicID(subject_name)
+        topic_id = self.GetTopicID(topic_name)
 
         #initially will select every question and then query from within that question
         query = f"SELECT Confidence FROM questions WHERE TopicID = {topic_id}"
@@ -214,7 +222,7 @@ class Model():
             Paper INT
         );
         """
-        #CHANGING QUESTIONS TO TEST FOR A TEST, CHANGE BACK
+
         questions_table_creation = """
         CREATE TABLE test (
             QuestionID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -231,20 +239,15 @@ class Model():
         try:
             self.c.execute(topics_table_creation)
         except mysql.connector.Error as e:
-            if e.errno == 1050:
-                print("table already exists")
-            else :
-                print("other error occurred with error code : ", e.errno)
+            print("error occurred with error code : ", e.errno)
+            print("error message is: ", e.msg)
 
 
         #creation of the questions table
         try:
             self.c.execute(questions_table_creation)
         except mysql.connector.Error as e:
-            if e.errno == 1050:
-                print("table already exists")
-            else:
-                print("other error occured with error code : ", e.errno)
-                print("error message is: ", e.msg)
+            print("other error occured with error code : ", e.errno)
+            print("error message is: ", e.msg)
 
 model = Model()
