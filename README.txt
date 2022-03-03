@@ -1,0 +1,6 @@
+WELCOME TO THE A LEVEL COMPUTER SCIENCE FLASHCARD APPLICATION
+HERE ARE THE STEPS IN GETTING THE APPLICATION TO FUNCTION PROPERLY:
+
+1. Navigate to the commandline, and run the command:
+    
+    pip install mysqlclient
